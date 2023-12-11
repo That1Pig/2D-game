@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://s266tys5rpl1"]
+
+[ext_resource type="Script" path="res://enemymage.gd" id="1_ic02n"]
+[ext_resource type="Texture2D" uid="uid://dl4nh4qpimj52" path="res://icon.svg" id="2_ad812"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl5vd"]
+
+[node name="enemymage" type="StaticBody2D"]
+script = ExtResource("1_ic02n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ad812")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(55, -59)
+scale = Vector2(0.215645, 2.14911)
+texture = ExtResource("2_ad812")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_pl5vd")
