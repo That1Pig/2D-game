@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cssnyq15h3c40"]
 
-[ext_resource type="Script" path="res://tweentest.gd" id="1_1hjtj"]
+[ext_resource type="Script" path="res://spring.gd" id="1_cesjk"]
 [ext_resource type="Texture2D" uid="uid://baewkucmn2hij" path="res://tilemap.png" id="2_37bqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_10sb7"]
 size = Vector2(18, 14)
 
 [node name="Spring" type="Area2D"]
-script = ExtResource("1_1hjtj")
+script = ExtResource("1_cesjk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)

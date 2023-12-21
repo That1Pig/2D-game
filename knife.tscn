@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0l2886ji6ug7"]
+
+[ext_resource type="Script" path="res://knife.gd" id="1_86cf1"]
+[ext_resource type="Texture2D" uid="uid://dav2iex8j0hoe" path="res://healthbarProgress.png" id="1_x8hwt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1j5f"]
+
+[sub_resource type="Animation" id="Animation_mbvf8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_3d1aj"]
+resource_name = "knifecollide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vww32"]
+_data = {
+"RESET": SubResource("Animation_mbvf8"),
+"knifecollide": SubResource("Animation_3d1aj")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bqqgg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mkgkc"]
+particle_flag_disable_z = true
+direction = Vector3(0, 40, 0)
+spread = 180.0
+gravity = Vector3(0, 1000, 0)
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 5.0
+scale_max = 5.0
+color = Color(1, 0, 0, 1)
+hue_variation_min = -0.08
+hue_variation_max = 0.19
+turbulence_noise_scale = 0.0
+collision_mode = 2
+
+[node name="knife" type="Area2D"]
+rotation = 1.5708
+script = ExtResource("1_86cf1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(0.21875, 1)
+texture = ExtResource("1_x8hwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.6, 0.15)
+shape = SubResource("RectangleShape2D_p1j5f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../GPUParticles2D")
+libraries = {
+"": SubResource("AnimationLibrary_vww32")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_bqqgg")
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_mkgkc")
+lifetime = 0.1
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

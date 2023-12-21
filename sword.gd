@@ -10,16 +10,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#print(swordlock)
+	
+	
+	
 	if Input.is_key_pressed(KEY_Q):
 		if swordlock == false:
-			
+			visible = false
 			swordlock = true
-			position = Vector2(get_parent().playerx,get_parent().playery)
+			position = Vector2(Globals.playerx,Globals.playery)
 			print("q pressed and timer started")
 			$AnimatedSprite2D.play("swordspriteanimation")
-			visible = true
+			
 			$AnimationPlayer.play("swordmovementanimation")
+			visible = true
 			await get_tree().create_timer(0.5).timeout
 			print("timer ended")
 			position = Vector2(position.x,-2000)

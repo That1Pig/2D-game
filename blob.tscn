@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://bh4j0mv718h8i"]
+
+[ext_resource type="Texture2D" uid="uid://biu8tc75hfidh" path="res://tilemap-characters.png" id="1_114gj"]
+[ext_resource type="Script" path="res://blob.gd" id="1_y4vqx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg6p8"]
+atlas = ExtResource("1_114gj")
+region = Rect2(5, 60, 15, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqlv2"]
+atlas = ExtResource("1_114gj")
+region = Rect2(30, 60, 15, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx23p"]
+atlas = ExtResource("1_114gj")
+region = Rect2(55, 60, 15, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0i7e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg6p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqlv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx23p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_435tl"]
+size = Vector2(11.0223, 8.97874)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2c26"]
+size = Vector2(50.8676, 9.00428)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwp03"]
+size = Vector2(12.967, 10.9773)
+
+[node name="blob" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+collision_layer = 2
+script = ExtResource("1_y4vqx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7.00933)
+sprite_frames = SubResource("SpriteFrames_p0i7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.00447083, -6.50367)
+shape = SubResource("RectangleShape2D_435tl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-19.9236, -6.49615)
+shape = SubResource("RectangleShape2D_u2c26")
+
+[node name="damagearea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damagearea"]
+position = Vector2(0.00752401, -6.50158)
+shape = SubResource("RectangleShape2D_lwp03")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="damagearea" to="." method="_on_damagearea_body_entered"]
+[connection signal="body_exited" from="damagearea" to="." method="_on_damagearea_body_exited"]
