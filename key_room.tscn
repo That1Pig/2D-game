@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://61ysgwf4h4"]
+
+[ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_kp8nm"]
+[ext_resource type="PackedScene" uid="uid://b0gsa10hf0b43" path="res://room_expansion_right.tscn" id="2_rsuyy"]
+[ext_resource type="PackedScene" uid="uid://c2y544p3i7s7p" path="res://room_expansion_left.tscn" id="3_v2onr"]
+[ext_resource type="PackedScene" uid="uid://bgbyyc80mfrmr" path="res://key.tscn" id="4_k1tkk"]
+[ext_resource type="Script" path="res://key_room_area.gd" id="5_e1vik"]
+[ext_resource type="PackedScene" uid="uid://bd2sxgfl0s5ac" path="res://background.tscn" id="6_03duv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00kq1"]
+size = Vector2(420.729, 279.307)
+
+[node name="key_room" type="Node2D"]
+
+[node name="grid" parent="." instance=ExtResource("1_kp8nm")]
+scale = Vector2(2, 2)
+cell_quadrant_size = 14
+layer_0/tile_data = PackedInt32Array(917504, 589824, 1, 917505, 1, 0, 917506, 1, 0, 917507, 1, 0, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 917512, 1, 0, 917513, 1, 0, 983040, 589824, 1, 983041, 589824, 1, 983042, 589824, 1, 983043, 589824, 1, 983044, 589824, 1, 983045, 589824, 1, 983046, 589824, 1, 983047, 589824, 1, 983048, 589824, 1, 983049, 589824, 1, 917514, 1, 0, 983050, 589824, 1, 917515, 1, 0, 983051, 589824, 1, 917517, 1, 0, 983053, 589824, 1, 917518, 589824, 1, 983054, 589824, 1, 917516, 1, 0, 983052, 589824, 1, 851975, 786432, 3, 786439, 786432, 2, 720903, 786432, 0, 720904, 917504, 0, 720902, 983040, 0, 917511, 1, 0, 524288, 589824, 1, 458752, 589824, 1, 393216, 589824, 1, 393217, 589824, 1, 393218, 589824, 1, 393219, 589824, 1, 393220, 589824, 1, 393221, 589824, 1, 393222, 589824, 1, 393223, 589824, 1, 393224, 589824, 1, 393225, 589824, 1, 393226, 589824, 1, 393227, 589824, 1, 393228, 589824, 1, 393229, 589824, 1, 393230, 589824, 1, 458766, 589824, 1, 524302, 589824, 1)
+
+[node name="room_expansion_right" parent="." instance=ExtResource("2_rsuyy")]
+position = Vector2(379.636, 321.964)
+
+[node name="room_expansion_left" parent="." instance=ExtResource("3_v2onr")]
+
+[node name="key" parent="." instance=ExtResource("4_k1tkk")]
+position = Vector2(211.936, 275.542)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_e1vik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(210.321, 308.246)
+shape = SubResource("RectangleShape2D_00kq1")
+
+[node name="background" parent="." instance=ExtResource("6_03duv")]
+position = Vector2(209.715, 307.277)
+scale = Vector2(1.64176, 278.465)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -5,14 +5,14 @@ var shieldlock = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$shieldsprite.visible = false
-	collision_layer = 2
+	set_collision_layer_value(2,false)
 	shieldlock = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if shieldlock == false and Input.is_key_pressed(KEY_E):
 		shieldlock = true
-		collision_layer = 1
+		set_collision_layer_value(2,true)
 		
 		if Globals.directionfacing == "left":
 			$shieldsprite.visible = true
@@ -34,13 +34,12 @@ func _process(delta):
 
 func _shieldreset() -> void:
 	await get_tree().create_timer(1).timeout
-	collision_layer = 2
+	set_collision_layer_value(2,false)
 	$Timer.start()
 	$shieldsprite.visible = false
 	await get_tree().create_timer(1).timeout
 	shieldlock = false
 	
-
 func _on_timer_timeout():
 	shieldlock = false
 	

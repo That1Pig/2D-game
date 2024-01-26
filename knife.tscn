@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0l2886ji6ug7"]
+[gd_scene load_steps=10 format=3 uid="uid://d0l2886ji6ug7"]
 
 [ext_resource type="Script" path="res://knife.gd" id="1_86cf1"]
 [ext_resource type="Texture2D" uid="uid://dav2iex8j0hoe" path="res://healthbarProgress.png" id="1_x8hwt"]
@@ -60,8 +60,12 @@ hue_variation_max = 0.19
 turbulence_noise_scale = 0.0
 collision_mode = 2
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_380bc"]
+size = Vector2(12, 4)
+
 [node name="knife" type="Area2D"]
 rotation = 1.5708
+collision_mask = 7
 script = ExtResource("1_86cf1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -86,4 +90,18 @@ amount = 20
 process_material = SubResource("ParticleProcessMaterial_mkgkc")
 lifetime = 0.1
 
+[node name="damagearea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damagearea"]
+position = Vector2(-1.90734e-06, 1.90735e-06)
+shape = SubResource("RectangleShape2D_380bc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="damagearea" to="." method="_on_damagearea_body_entered"]
+[connection signal="body_exited" from="damagearea" to="." method="_on_damagearea_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

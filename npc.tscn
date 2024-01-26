@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://lgihjn135wu7"]
+
+[ext_resource type="Script" path="res://interactablearea.gd" id="1_fxng3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp8y"]
+
+[node name="npc" type="Node2D"]
+
+[node name="interactable" type="Area2D" parent="."]
+position = Vector2(130.264, 74.3723)
+scale = Vector2(0.491535, 0.541142)
+collision_layer = 2
+script = ExtResource("1_fxng3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_3dp8y")
+
+[node name="pressEprompt" type="Label" parent="interactable"]
+offset_left = 5.0
+offset_top = -111.0
+offset_right = 45.0
+offset_bottom = -85.0
+text = "E?"
+
+[node name="textandbox" type="Node2D" parent="interactable"]
+position = Vector2(5, -111)
+
+[node name="dialogue" type="Label" parent="interactable/textandbox"]
+offset_left = -108.0
+offset_top = 5.0
+offset_right = 1564.0
+offset_bottom = 291.0
+text = "jf;asjdf;asndf;asndf;sajdfn;sndafasdfsadfasdfas"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[connection signal="body_entered" from="interactable" to="interactable" method="_on_body_entered"]
+[connection signal="body_exited" from="interactable" to="interactable" method="_on_body_exited"]

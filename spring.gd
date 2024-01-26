@@ -13,7 +13,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "player":
-		body.velocity.y = 100
+		body.velocity.y = -600
 		$expanded.visible = false
 		$compressed.visible = true
 		_springboing()
@@ -26,13 +26,13 @@ func _on_body_exited(body):
 
 
 func _springboing() -> void:
-	var tween := create_tween().set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "scale", Vector2(self.scale.x,1.3), 0.45)
+	var tween := create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", Vector2(self.scale.x,1.3), 1)
 	tween.parallel().tween_property(self, "position", Vector2(self.position.x,self.position.y + 0.5), 0.45)
 	
 func _springunboing() -> void:
-	var tween := create_tween().set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "scale", Vector2(self.scale.x,1), 0.45)
+	var tween := create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", Vector2(self.scale.x,1), 1)
 	tween.parallel().tween_property(self, "position", Vector2(self.position.x,self.position.y - 0.5), 0.45)
 
 

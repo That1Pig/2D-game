@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://x63rua7ul8jd"]
+
+[ext_resource type="Script" path="res://boostpad.gd" id="2_eutn3"]
+[ext_resource type="Texture2D" uid="uid://c0c4ivss0xikw" path="res://tilemap_packed.png" id="2_vqg1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tojpd"]
+size = Vector2(41.9726, 0.334843)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2v6u"]
+size = Vector2(41.9953, 13.9917)
+
+[node name="boostpad" type="StaticBody2D"]
+scale = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-8.12213, -9.12856)
+script = ExtResource("2_eutn3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.10431, -5.03455)
+shape = SubResource("RectangleShape2D_tojpd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.0124, -6.99587)
+shape = SubResource("RectangleShape2D_r2v6u")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-7.01632, -6.99237)
+scale = Vector2(1.08309, 1.43874)
+texture = ExtResource("2_vqg1h")
+region_enabled = true
+region_rect = Rect2(130.189, 94.1322, 38.7808, 9.72939)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

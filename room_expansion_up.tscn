@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dltp2ieeaovk2"]
+
+[ext_resource type="Script" path="res://room_expansion_up.gd" id="1_e3wyv"]
+[ext_resource type="PackedScene" uid="uid://cbcoyw5gcj8mj" path="res://enemycollidearea.tscn" id="2_swqxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qn6ie"]
+size = Vector2(139.948, 24.671)
+
+[node name="room_expansion_up" type="Area2D"]
+position = Vector2(574.177, 40.467)
+script = ExtResource("1_e3wyv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qn6ie")
+
+[node name="enemycollidearea" parent="." instance=ExtResource("2_swqxp")]
+position = Vector2(0.134888, -22.2236)
+scale = Vector2(7, 1)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered" flags=18]
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://ck4yx37y14pk0"]
+
+[ext_resource type="Script" path="res://swingingsawright.gd" id="1_o1v62"]
+[ext_resource type="Texture2D" uid="uid://2gnkr2jyhed7" path="res://PNG Others/platformIndustrial_035.png" id="1_tt88c"]
+[ext_resource type="Texture2D" uid="uid://c3l06q4dr5myn" path="res://PNG Others/platformIndustrial_036.png" id="2_0d3ry"]
+[ext_resource type="Texture2D" uid="uid://b6sce0o0kks67" path="res://PNG Others/platformIndustrial_067.png" id="3_p3isk"]
+[ext_resource type="Script" path="res://sawanimationleft.gd" id="5_mrn3k"]
+[ext_resource type="Script" path="res://spikearea.gd" id="6_wbcd1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mkt4x"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_b1ba8"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/sync = true
+properties/0/watch = false
+properties/1/path = NodePath("playernamelabel:text")
+properties/1/spawn = true
+properties/1/sync = true
+properties/1/watch = false
+properties/2/path = NodePath(".:rotation")
+properties/2/spawn = true
+properties/2/sync = true
+properties/2/watch = false
+
+[node name="swingingsawright" type="Node2D"]
+position = Vector2(172, 139)
+rotation = 3.14159
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("1_o1v62")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(25, 23)
+texture = ExtResource("1_tt88c")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(95, 23)
+texture = ExtResource("2_0d3ry")
+
+[node name="saw" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(158, 0)
+texture = ExtResource("3_p3isk")
+script = ExtResource("5_mrn3k")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+script = ExtResource("6_wbcd1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(158, 0)
+scale = Vector2(2.7, 2.7)
+shape = SubResource("CircleShape2D_mkt4x")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_b1ba8")
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="_on_body_exited"]

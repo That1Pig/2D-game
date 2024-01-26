@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b80bxm0b6l665"]
+
+[ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_rk0wu"]
+[ext_resource type="PackedScene" uid="uid://yo84c45ejo1w" path="res://door.tscn" id="3_460ys"]
+[ext_resource type="PackedScene" uid="uid://b0gsa10hf0b43" path="res://room_expansion_right.tscn" id="3_un7xg"]
+[ext_resource type="PackedScene" uid="uid://bd2sxgfl0s5ac" path="res://background.tscn" id="4_ov01j"]
+
+[node name="floor_exit_room_right" type="Node2D"]
+
+[node name="grid" parent="." instance=ExtResource("1_rk0wu")]
+scale = Vector2(2, 2)
+cell_quadrant_size = 14
+layer_0/tile_data = PackedInt32Array(917504, 589824, 1, 917505, 1, 0, 917506, 1, 0, 917507, 1, 0, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 917512, 1, 0, 917513, 1, 0, 983040, 589824, 1, 983041, 589824, 1, 983042, 589824, 1, 983043, 589824, 1, 983044, 589824, 1, 983045, 589824, 1, 983046, 589824, 1, 983047, 589824, 1, 983048, 589824, 1, 983049, 589824, 1, 917514, 1, 0, 983050, 589824, 1, 917515, 1, 0, 983051, 589824, 1, 917517, 1, 0, 983053, 589824, 1, 917518, 589824, 1, 983054, 589824, 1, 917516, 1, 0, 983052, 589824, 1, 917511, 1, 0, 524288, 589824, 1, 458752, 589824, 1, 393216, 589824, 1, 393217, 589824, 1, 393218, 589824, 1, 393219, 589824, 1, 393220, 589824, 1, 393221, 589824, 1, 393222, 589824, 1, 393223, 589824, 1, 393224, 589824, 1, 393225, 589824, 1, 393226, 589824, 1, 393227, 589824, 1, 393228, 589824, 1, 393229, 589824, 1, 393230, 589824, 1, 458766, 589824, 1, 524302, 589824, 1, 589824, 589824, 1, 655360, 589824, 1, 720896, 589824, 1, 786432, 589824, 1, 851968, 589824, 1)
+
+[node name="room_expansion_right" parent="." instance=ExtResource("3_un7xg")]
+position = Vector2(379.621, 321.62)
+
+[node name="door" parent="." instance=ExtResource("3_460ys")]
+position = Vector2(210.088, 355.79)
+
+[node name="background" parent="." instance=ExtResource("4_ov01j")]
+position = Vector2(209.671, 307.186)
+scale = Vector2(1.64142, 278.647)

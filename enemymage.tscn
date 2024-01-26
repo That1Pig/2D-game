@@ -1,22 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://s266tys5rpl1"]
+[gd_scene load_steps=5 format=3 uid="uid://s266tys5rpl1"]
 
 [ext_resource type="Script" path="res://enemymage.gd" id="1_ic02n"]
 [ext_resource type="Texture2D" uid="uid://dl4nh4qpimj52" path="res://icon.svg" id="2_ad812"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl5vd"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0lds"]
+
 [node name="enemymage" type="StaticBody2D"]
 scale = Vector2(0.4, 0.4)
+collision_layer = 14
+collision_mask = 0
 script = ExtResource("1_ic02n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ad812")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(55, -59)
-scale = Vector2(0.215645, 2.14911)
-texture = ExtResource("2_ad812")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_pl5vd")
+
+[node name="damagearea" type="Area2D" parent="."]
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damagearea"]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_p0lds")
+
+[connection signal="area_entered" from="damagearea" to="." method="_on_damagearea_area_entered"]
+[connection signal="body_entered" from="damagearea" to="." method="_on_damagearea_body_entered"]
+[connection signal="body_exited" from="damagearea" to="." method="_on_damagearea_body_exited"]

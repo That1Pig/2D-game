@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://btsumbjqsh2n2"]
+
+[ext_resource type="PackedScene" uid="uid://ccu54mqfl0gba" path="res://spike.tscn" id="1_fa2an"]
+
+[node name="spike_strip" type="Node2D"]
+
+[node name="spike2" parent="." instance=ExtResource("1_fa2an")]
+position = Vector2(-70.1703, -15.1413)
+
+[node name="spike3" parent="." instance=ExtResource("1_fa2an")]
+position = Vector2(-42.1757, -15.1413)
+
+[node name="spike4" parent="." instance=ExtResource("1_fa2an")]
+position = Vector2(-14.1853, -15.1413)
+
+[node name="spike5" parent="." instance=ExtResource("1_fa2an")]
+position = Vector2(13.8147, -15.1413)
+
+[node name="spike6" parent="." instance=ExtResource("1_fa2an")]
+position = Vector2(41.8093, -15.1413)
+
+[node name="spike7" parent="." instance=ExtResource("1_fa2an")]
+position = Vector2(69.7468, -15.1413)

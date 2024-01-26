@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1a7ovldaikx2"]
+
+[ext_resource type="Texture2D" uid="uid://b5awhrrpx0hpv" path="res://PNG Others/platformIndustrial_065.png" id="1_7gaue"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtxyt"]
+size = Vector2(70, 18)
+
+[sub_resource type="Animation" id="Animation_swe8p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kdk6l"]
+resource_name = "platformloop"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-65, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jg88"]
+_data = {
+"RESET": SubResource("Animation_swe8p"),
+"platformloop": SubResource("Animation_kdk6l")
+}
+
+[node name="movingsolid" type="Node2D"]
+scale = Vector2(2, 5)
+
+[node name="platform" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="platform"]
+position = Vector2(-26, -1)
+rotation = 1.5708
+texture = ExtResource("1_7gaue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2(0, -1)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_qtxyt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform"]
+autoplay = "platformloop"
+libraries = {
+"": SubResource("AnimationLibrary_5jg88")
+}
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]

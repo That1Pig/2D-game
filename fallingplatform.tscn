@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://how17e0e2xfe"]
+
+[ext_resource type="Texture2D" uid="uid://gdm2cdjgedtv" path="res://PNG Others/platformIndustrial_027.png" id="1_6v66g"]
+[ext_resource type="Script" path="res://fallingplatformarea.gd" id="2_kc2m1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cogql"]
+size = Vector2(70, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvo4l"]
+size = Vector2(70, 3)
+
+[node name="fallingplatform" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_cogql")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_6v66g")
+
+[node name="fallingplatformarea" type="Area2D" parent="StaticBody2D"]
+script = ExtResource("2_kc2m1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/fallingplatformarea"]
+position = Vector2(0, -36.5)
+shape = SubResource("RectangleShape2D_tvo4l")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+
+[connection signal="body_entered" from="StaticBody2D/fallingplatformarea" to="StaticBody2D/fallingplatformarea" method="_on_body_entered"]

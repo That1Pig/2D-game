@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgbyyc80mfrmr"]
+
+[ext_resource type="Texture2D" uid="uid://baewkucmn2hij" path="res://tilemap.png" id="2_joa8a"]
+[ext_resource type="Script" path="res://keyremovalarea.gd" id="3_yci4g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7esm"]
+
+[sub_resource type="Animation" id="Animation_g38j8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r5t64"]
+resource_name = "key_move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ypwd"]
+_data = {
+"RESET": SubResource("Animation_g38j8"),
+"key_move": SubResource("Animation_r5t64")
+}
+
+[node name="fullkey" type="Node2D"]
+
+[node name="key" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="image" type="Sprite2D" parent="key"]
+position = Vector2(0.00774002, 0.00453711)
+rotation = 1.5708
+texture = ExtResource("2_joa8a")
+region_enabled = true
+region_rect = Rect2(133.024, 22.0528, 17.9724, 11.8915)
+
+[node name="Area2D" type="Area2D" parent="key"]
+script = ExtResource("3_yci4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key/Area2D"]
+shape = SubResource("RectangleShape2D_n7esm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="key"]
+autoplay = "key_move"
+libraries = {
+"": SubResource("AnimationLibrary_1ypwd")
+}
+
+[connection signal="body_entered" from="key/Area2D" to="key/Area2D" method="_on_body_entered"]

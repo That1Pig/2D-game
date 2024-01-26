@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://xfuxmk06ytj0"]
+
+[ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_1lwj1"]
+[ext_resource type="PackedScene" uid="uid://b0gsa10hf0b43" path="res://room_expansion_right.tscn" id="2_giu0t"]
+[ext_resource type="PackedScene" uid="uid://dbmp8pue0rxhk" path="res://room_expansion_down.tscn" id="3_m7gn6"]
+[ext_resource type="PackedScene" uid="uid://cssnyq15h3c40" path="res://spring.tscn" id="4_4gi7e"]
+[ext_resource type="PackedScene" uid="uid://bd2sxgfl0s5ac" path="res://background.tscn" id="5_2hhmh"]
+
+[node name="room_4" type="Node2D"]
+
+[node name="grid" parent="." instance=ExtResource("1_1lwj1")]
+scale = Vector2(2, 2)
+cell_quadrant_size = 14
+layer_0/tile_data = PackedInt32Array(1441822, 589824, 1, 1441832, 589824, 1, 1376296, 589824, 1, 1310760, 589824, 1, 1245224, 589824, 1, 1179688, 589824, 1, 1114152, 589824, 1, 1048616, 65536, 2, 983080, 65536, 2, 917544, 589824, 1, 524328, 589824, 1, 458792, 589824, 1, 393256, 589824, 1, 393246, 589824, 1, 458782, 589824, 1, 524318, 589824, 1, 589854, 589824, 1, 655390, 589824, 1, 720926, 589824, 1, 786462, 589824, 1, 851998, 589824, 1, 917534, 589824, 1, 983070, 589824, 1, 1048606, 589824, 1, 1114142, 589824, 1, 1179678, 589824, 1, 1245214, 589824, 1, 1310750, 589824, 1, 1376286, 589824, 1, 1507358, 589824, 1, 1572894, 589824, 1, 1638430, 589824, 1, 1703966, 589824, 1, 1769502, 589824, 1, 1835038, 589824, 1, 1900574, 589824, 1, 1966110, 589824, 1, 2031646, 589824, 1, 2097182, 589824, 1, 2162718, 589824, 1, 2228254, 589824, 1, 2293790, 589824, 1, 2359326, 589824, 1, 2424862, 589824, 1, 2490398, 589824, 1, 2555934, 589824, 1, 2621470, 589824, 1, 2687006, 589824, 1, 2752542, 589824, 1, 2818078, 589824, 1, 1507368, 589824, 1, 1572904, 589824, 1, 1638440, 589824, 1, 1703976, 589824, 1, 1769512, 589824, 1, 1835048, 589824, 1, 1900584, 589824, 1, 1966120, 589824, 1, 2031656, 589824, 1, 2097192, 589824, 1, 2162728, 589824, 1, 2228264, 589824, 1, 2293800, 589824, 1, 2359336, 589824, 1, 2424872, 589824, 1, 2490408, 589824, 1, 2555944, 589824, 1, 2621480, 589824, 1, 2687016, 589824, 1, 2752552, 589824, 1, 2818088, 589824, 1, 393255, 589824, 1, 393254, 589824, 1, 393253, 589824, 1, 393252, 589824, 1, 393251, 589824, 1, 393250, 589824, 1, 393249, 589824, 1, 393248, 589824, 1, 393247, 589824, 1, 2818079, 589824, 1, 2818080, 589824, 1, 2818086, 589824, 1, 2818087, 589824, 1, 2555943, 327681, 1, 2555942, 327681, 0, 2555941, 262145, 1, 1769509, 262145, 0, 983077, 262145, 1, 1769510, 327681, 1, 1769511, 327681, 0, 983078, 327681, 0, 983079, 327681, 1, 2162721, 393217, 0, 1376289, 393217, 1, 2162720, 327681, 1, 2162719, 327681, 0, 1376288, 327681, 1, 1376287, 327681, 0)
+
+[node name="room_expansion_right" parent="." instance=ExtResource("2_giu0t")]
+
+[node name="room_expansion_down" parent="." instance=ExtResource("3_m7gn6")]
+position = Vector2(994.009, 1191.43)
+
+[node name="Spring" parent="." instance=ExtResource("4_4gi7e")]
+position = Vector2(1060.32, 1086.5)
+
+[node name="Spring5" parent="." instance=ExtResource("4_4gi7e")]
+position = Vector2(908.418, 1198.31)
+
+[node name="Spring2" parent="." instance=ExtResource("4_4gi7e")]
+position = Vector2(937.419, 918.579)
+
+[node name="Spring3" parent="." instance=ExtResource("4_4gi7e")]
+position = Vector2(1055.42, 750.579)
+
+[node name="Spring4" parent="." instance=ExtResource("4_4gi7e")]
+position = Vector2(932.919, 582.579)
+
+[node name="background" parent="." instance=ExtResource("5_2hhmh")]
+position = Vector2(993.711, 699.678)
+scale = Vector2(1.20379, 1063.72)

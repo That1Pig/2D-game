@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyg30hk3w4lfb"]
+
+[ext_resource type="PackedScene" uid="uid://vlj84j14bwrh" path="res://player.tscn" id="1_txlnt"]
+[ext_resource type="Script" path="res://dungeon.gd" id="1_ufg8n"]
+[ext_resource type="PackedScene" uid="uid://1ixbruwkyhtk" path="res://entrance.tscn" id="2_ovqxs"]
+
+[sub_resource type="Gradient" id="Gradient_n54fo"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sne6r"]
+gradient = SubResource("Gradient_n54fo")
+
+[node name="Dungeon" type="Node2D"]
+script = ExtResource("1_ufg8n")
+
+[node name="fullplayer" parent="." instance=ExtResource("1_txlnt")]
+position = Vector2(193.77, 302.505)
+
+[node name="entrance" parent="." instance=ExtResource("2_ovqxs")]
+
+[node name="background_darkness_sprite" type="Sprite2D" parent="."]
+visible = false
+z_index = -15
+position = Vector2(120.955, 385.067)
+scale = Vector2(100.931, 18276.1)
+texture = SubResource("GradientTexture1D_sne6r")

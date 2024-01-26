@@ -4,22 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://baewkucmn2hij" path="res://tilemap.png" id="1_qcb4e"]
 
 [node name="spike" type="StaticBody2D"]
+scale = Vector2(2, 2)
 
 [node name="Tilemap" type="Sprite2D" parent="."]
 position = Vector2(0, 3)
 texture = ExtResource("1_qcb4e")
 region_enabled = true
-region_rect = Rect2(151.81, 66.1075, 18.3777, 8.91862)
+region_rect = Rect2(153.998, 66.0263, 14.0536, 8.99984)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 0.446961)
 polygon = PackedVector2Array(3, 0, 5, 0, 7, 4, 7, 7, -7, 7, -7, 4, -5, 0, -3, 0, 0, 7)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_qc1k8")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(0, -1)
-scale = Vector2(1.1, 1.2)
+position = Vector2(-0.0165548, 0.380745)
+scale = Vector2(1.01, 1.02)
 polygon = PackedVector2Array(3, 0, 5, 0, 7, 4, 7, 7, -7, 7, -7, 4, -5, 0, -3, 0, 0, 7)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
