@@ -1,13 +1,11 @@
 extends StaticBody2D
 
-var knifelaunch = preload("res://knife.tscn")
-var movesetcooldown = 0
-var random = 0
+var fireballlaunch = preload("res://fireball.tscn")
 var damageamount = 5 + randi_range(Globals.floor,Globals.floor*2)
 var enemyhealth = 20 + (5 * Globals.floor - 5)
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var immune = false
-var knifelock = false
+var fireballthrown = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,15 +13,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if knifelock == false:
-		random = randi_range(1,10)
-		if random > 5:
-			knifelock = true
-			await get_tree().create_timer(3).timeout
-			knifelock = false
-		else:
-			var newknife = knifelaunch.instantiate()
-			add_child(newknife)
+	if fireballthrown==false:
+		fireballthrown=true
+		for i in range(5):
+			var newfireball = fireballlaunch.instantiate()
+			add_child(newfireball)
+			await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(1).timeout
+		fireballthrown=false
 
 #Damages player
 func _on_damagearea_body_entered(body):

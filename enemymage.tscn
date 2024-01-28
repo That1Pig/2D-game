@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://s266tys5rpl1"]
 
 [ext_resource type="Script" path="res://enemymage.gd" id="1_ic02n"]
-[ext_resource type="Texture2D" uid="uid://dl4nh4qpimj52" path="res://icon.svg" id="2_ad812"]
+[ext_resource type="Texture2D" uid="uid://bne7eo1d532ij" path="res://mage.png" id="2_a0foe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl5vd"]
 
@@ -9,12 +9,14 @@
 
 [node name="enemymage" type="StaticBody2D"]
 scale = Vector2(0.4, 0.4)
-collision_layer = 14
-collision_mask = 0
+collision_layer = 10
+collision_mask = 14
 script = ExtResource("1_ic02n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ad812")
+position = Vector2(0, -5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_a0foe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(8, 8)

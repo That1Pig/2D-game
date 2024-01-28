@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if shieldlock == false and Input.is_key_pressed(KEY_E):
+	if shieldlock == false and Input.is_key_pressed(KEY_E) or Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		shieldlock = true
 		set_collision_layer_value(2,true)
 		
@@ -21,14 +21,6 @@ func _process(delta):
 		elif Globals.directionfacing == "right":
 			$shieldsprite.visible = true
 			rotation = deg_to_rad(180)
-			_shieldreset()
-		elif Globals.directionfacing == "up":
-			$shieldsprite.visible = true
-			rotation = deg_to_rad(90)
-			_shieldreset()
-		elif Globals.directionfacing == "down":
-			$shieldsprite.visible = true
-			rotation = deg_to_rad(270)
 			_shieldreset()
 	$cooldownanimationtimer.value = ($Timer.time_left * 100)
 

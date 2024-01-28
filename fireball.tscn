@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhd3soyuo17gi"]
+[gd_scene load_steps=10 format=3 uid="uid://ba3kir56m8vww"]
 
-[ext_resource type="Script" path="res://knife.gd" id="1_86cf1"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_es7rq"]
+[ext_resource type="Script" path="res://fireball.gd" id="1_fok2r"]
+[ext_resource type="Texture2D" uid="uid://dmbnw32d015qh" path="res://102-1023369_fireball-clipart-pixel-sprite-hama-beads-super-man.png" id="2_w5axs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1j5f"]
+size = Vector2(13.3333, 73.3333)
 
 [sub_resource type="Animation" id="Animation_mbvf8"]
 length = 0.001
@@ -62,19 +62,21 @@ turbulence_noise_scale = 0.0
 collision_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_380bc"]
-size = Vector2(12, 4)
+size = Vector2(8.00001, 13)
 
 [node name="fireball" type="Area2D"]
 rotation = 1.5708
+scale = Vector2(3, 3)
 collision_mask = 7
-script = ExtResource("1_86cf1")
+script = ExtResource("1_fok2r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(4.76837e-07, 0)
-scale = Vector2(0.21875, 1)
-texture = SubResource("AnimatedTexture_es7rq")
+rotation = 1.5708
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_w5axs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.44025e-05, 0.500004)
 scale = Vector2(0.6, 0.15)
 shape = SubResource("RectangleShape2D_p1j5f")
 
@@ -94,7 +96,7 @@ lifetime = 0.1
 [node name="damagearea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damagearea"]
-position = Vector2(-1.90734e-06, 1.90735e-06)
+position = Vector2(5.5651e-06, 0.500004)
 shape = SubResource("RectangleShape2D_380bc")
 
 [node name="Timer" type="Timer" parent="."]

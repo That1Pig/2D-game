@@ -50,13 +50,13 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
-	if Input.is_key_pressed(KEY_LEFT):
+	if Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_A):
 		#scale.x = -.2
 		velocity.x = move_toward(velocity.x,-300.0,50)
 		Globals.directionfacing = "left"
 		Globals.directionfacing_x = "left"
 		
-	if Input.is_key_pressed(KEY_RIGHT):
+	if Input.is_key_pressed(KEY_RIGHT) or Input.is_key_pressed(KEY_D):
 		#scale.x = .2
 		velocity.x = move_toward(velocity.x,300.0,50)
 		Globals.directionfacing = "right"
