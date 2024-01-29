@@ -23,9 +23,11 @@ var damageamount = randi_range(Globals.floor,Globals.floor*2)
 #Damages player
 func _on_damagearea_body_entered(body):
 	if body.name == "player":
+		Globals.shortimmunity=true
 		body.damageamount = damageamount
 		body.hit = true
 		body.velocity.x=0
+		
 
 #Undamages player
 func _on_damagearea_body_exited(body):

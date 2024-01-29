@@ -1,5 +1,6 @@
 extends Area2D
-
+var pityroom
+var chosenroom = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -10,11 +11,18 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "player":
+		pityroom = str(get_parent().get_name())
+		if pityroom not in Globals.bannedrooms:
+			Globals.roompity.append(str(get_parent().get_name()))
+		print(Globals.roompity)
 		queue_free()
 		#Shuffles rooms to pick one
 		Globals.up_links.shuffle()
-		var new_room_name = "res://" + Globals.up_links[0] + ".tscn"
-		
+		chosenroom = Globals.up_links[0]
+		while chosenroom in Globals.roompity:
+			Globals.up_links.shuffle()	
+			chosenroom = Globals.up_links[0]
+		var new_room_name = "res://" + chosenroom + ".tscn"
 		#Loads new room
 		var down_room = load(new_room_name)
 		var new_down_room = down_room.instantiate()

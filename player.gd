@@ -11,6 +11,9 @@ var damageamount
 var armour = 0
 var armour_res = 1
 var onboost = false
+var stuck = false
+var stuckboost = false
+
 
 func _physics_process(delta):
 	Globals.playerx = global_position.x
@@ -20,26 +23,39 @@ func _physics_process(delta):
 	#Links healthbar to health
 	get_node("HealthBar").value = health
 	
-	if hit == true and immune == false:
+	if hit == true and immune == false and Globals.shortimmunity == false:
+		get_node("sprite").modulate.a = 0.1
 		immune = true
 		health = (health - damageamount + armour) * armour_res
 		await get_tree().create_timer(0.75).timeout
 		immune = false
-	
-	#Iframe animation
-	if immune == true:
-		get_node("sprite").modulate.a = 0.1
-	else:
 		get_node("sprite").modulate.a = 1
-	
-	#Label Update
+	if hit == true and immune == false and Globals.shortimmunity == true:
+		get_node("sprite").modulate.a = 0.5
+		immune = true
+		health = (health - damageamount + armour) * armour_res
+		await get_tree().create_timer(0.1).timeout
+		immune = false
+		get_node("sprite").modulate.a = 1
+		Globals.shortimmunity=false
 	$HealthValue.text = str(health)
 
+	if is_on_wall() and is_on_floor():
+		stuck = true
+	else:
+		stuck = false
+	
+	if stuck == true:
+		if stuckboost == false:
+			stuckboost = true
+			position.y -= 0.1
+			print("went over bump")
+			await get_tree().create_timer(0.1).timeout
+			stuckboost = false
 
 #load to main scene
 #	if health <= 0:
 #		get_tree().l
-
 
 	friction = move_toward(friction,25,1)
 

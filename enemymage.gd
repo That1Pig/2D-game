@@ -12,14 +12,14 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	if fireballthrown==false:
 		fireballthrown=true
 		for i in range(5):
 			var newfireball = fireballlaunch.instantiate()
 			add_child(newfireball)
-			await get_tree().create_timer(0.1).timeout
-		await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(2).timeout
 		fireballthrown=false
 
 #Damages player
@@ -40,7 +40,7 @@ func _on_damagearea_area_entered(area):
 		if area.name == "weapon":
 			print("weapon collide")
 			immune = true
-			modulate.a = 0.1
+			modulate.a = 0.5
 			if Globals.critrate >= randi_range(1,100):
 				enemyhealth -= Globals.playerdamage * Globals.critmultiplier
 			else:
@@ -48,15 +48,10 @@ func _on_damagearea_area_entered(area):
 			print(enemyhealth)
 			if enemyhealth <= 0:
 				queue_free()
-			await get_tree().create_timer(0.5).timeout
+			await get_tree().create_timer(0.2).timeout
 			modulate.a = 1
 			immune = false
 		
-	#Knockback
-	#		if area.Animation.name == "swordmovementright":
-	#			print("sword movement right")
-	#		else:
-	#			print("sword movement left")
 	
-	#AnimationPlayer.play("swordmovementright")
+
 			

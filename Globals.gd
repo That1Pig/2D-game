@@ -3,6 +3,7 @@ extends Node
 #Initially
 var playerx = int()
 var playery = int()
+var maxhealth = 50
 var playerdamage = 0
 var critrate = 10
 var critmultiplier = 2
@@ -13,8 +14,7 @@ var directionfacing_y = ""
 var roomprogress = 2
 var keyfound = false
 var floor = 1
-
-#G:LH:LHGFGL:FG:LHGF:LJGF:LFG: REMEMBER TO ADD KEYROOM AFTER NEW ROOM ENTERED
+var shortimmunity = false
 
 #Room pool - These are the rooms accessible by the current floor, separated into various links.
 #Rooms are added and removed in different floors and conditions
@@ -33,5 +33,10 @@ var down_links = ["room_4"]
 var linkpos1
 var linkpos2
 
-#Ready
 
+var roompity = []
+var bannedrooms = ["entrance","key_room","floor_exit_room_left","floor_exit_room_right"]
+
+func _process(delta):
+	if roompity.size() == 2:
+		roompity.pop_front()

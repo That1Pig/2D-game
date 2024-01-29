@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bne7eo1d532ij"
-path="res://.godot/imported/mage.png-f40047069d81f055fa40a2a36e7cc3d9.ctex"
+uid="uid://canfocmbi3iwe"
+path="res://.godot/imported/the-orios.png-4a2f1db5c7d3a8c7d37ac4393bdcdabe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mage.png"
-dest_files=["res://.godot/imported/mage.png-f40047069d81f055fa40a2a36e7cc3d9.ctex"]
+source_file="res://the-orios.png"
+dest_files=["res://.godot/imported/the-orios.png-4a2f1db5c7d3a8c7d37ac4393bdcdabe.ctex"]
 
 [params]
 

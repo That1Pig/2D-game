@@ -56,24 +56,20 @@ func _on_damagearea_area_entered(area):
 		if area.name == "weapon":
 			print("weapon collide")
 			immune = true
-			modulate.a = 0.1
+			modulate.a = 0.5
+			speed = -20
 			if Globals.critrate >= randi_range(1,100):
 				enemyhealth -= Globals.playerdamage * Globals.critmultiplier
+				#particle here
 			else:
 				enemyhealth -= Globals.playerdamage
 			print(enemyhealth)
 			if enemyhealth <= 0:
 				queue_free()
-			await get_tree().create_timer(0.5).timeout
+			await get_tree().create_timer(0.2).timeout
+			speed = 50
 			modulate.a = 1
+			
 			immune = false
 		
 	#Knockback
-	#		if area.Animation.name == "swordmovementright":
-	#			print("sword movement right")
-	#		else:
-	#			print("sword movement left")
-	
-	#AnimationPlayer.play("swordmovementright")
-			
-	

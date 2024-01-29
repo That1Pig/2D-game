@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dso2xygmj1b0f"]
+
+[ext_resource type="Texture2D" uid="uid://c0c4ivss0xikw" path="res://tilemap_packed.png" id="1_c6vt6"]
+[ext_resource type="Script" path="res://goo.gd" id="2_y2o1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujche"]
+size = Vector2(28, 22)
+
+[node name="goo" type="Node2D"]
+
+[node name="TilemapPacked" type="Sprite2D" parent="."]
+position = Vector2(5, -5)
+scale = Vector2(1.55556, 1.55556)
+texture = ExtResource("1_c6vt6")
+region_enabled = true
+region_rect = Rect2(234.022, -0.111725, 18.0081, 18.0788)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(5, -2)
+script = ExtResource("2_y2o1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ujche")

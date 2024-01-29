@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cssnyq15h3c40" path="res://spring.tscn" id="5_ufp3e"]
 [ext_resource type="PackedScene" uid="uid://bh4j0mv718h8i" path="res://blob.tscn" id="6_ikto7"]
 
-[node name="room_6" type="Node2D"]
+[node name="room_7" type="Node2D"]
 
 [node name="grid" parent="." instance=ExtResource("1_kyrjv")]
 scale = Vector2(2, 2)

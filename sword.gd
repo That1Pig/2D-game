@@ -9,19 +9,21 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
+	#position = Vector2(Globals.playerx,Globals.playery)
+	
 	if Input.is_key_pressed(KEY_Q) or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if swordactive==false:
 			swordactive=true
-			position = Vector2(Globals.playerx,Globals.playery)
 			set_collision_layer_value(2,true)
-			visible=true
 			Globals.playerdamage = 10
 			if Globals.directionfacing_x == "left":
+				visible=true
 				$AnimationPlayer.play("swordmovementleft")
 			if Globals.directionfacing_x == "right":
+				visible=true
 				$AnimationPlayer.play("swordmovementright")
 			await get_tree().create_timer(0.5).timeout
 			set_collision_layer_value(2,false)
-			visible=false
 			swordactive=false
+			visible=false
 		
