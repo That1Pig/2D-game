@@ -1,10 +1,9 @@
 extends Area2D
 
-var damageamount = 5
+var damageamount = 10
 
 func _on_body_entered(body):
 	if body.name == "player":
-		Globals.shortimmunity=true
 		body.damageamount = damageamount
 		body.hit = true
 

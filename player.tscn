@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://vlj84j14bwrh"]
+[gd_scene load_steps=20 format=3 uid="uid://vlj84j14bwrh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k4gdq"]
 [ext_resource type="Texture2D" uid="uid://dl4nh4qpimj52" path="res://icon.svg" id="2_xap8q"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dav2iex8j0hoe" path="res://healthbarProgress.png" id="4_kppmn"]
 [ext_resource type="Texture2D" uid="uid://degysa2bkep48" path="res://e37e525c4bf9d0b (1).png" id="6_imhee"]
 [ext_resource type="Script" path="res://shield.gd" id="7_jvgea"]
+[ext_resource type="Texture2D" uid="uid://dxoc1jytq8ad6" path="res://pixilart-drawing.png" id="7_umksy"]
 [ext_resource type="Script" path="res://shieldenemycollision.gd" id="8_fd27b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omena"]
@@ -104,6 +105,9 @@ _data = {
 "swordmovementright": SubResource("Animation_vaxa6")
 }
 
+[sub_resource type="Gradient" id="Gradient_3xq3j"]
+colors = PackedColorArray(0, 0, 0, 0.2, 1, 1, 1, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2fd4"]
 size = Vector2(10.0012, 63.9806)
 
@@ -172,6 +176,23 @@ rotation = 2.03444
 scale = Vector2(0.041, 0.041)
 skew = 0.643501
 texture = ExtResource("6_imhee")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="player/weapon"]
+position = Vector2(-0.0428314, -0.0856619)
+emitting = false
+amount = 12
+lifetime = 0.3
+one_shot = true
+texture = ExtResource("7_umksy")
+emission_shape = 3
+emission_rect_extents = Vector2(18, 14)
+gravity = Vector2(0, -30)
+initial_velocity_min = 25.0
+initial_velocity_max = 25.0
+angular_velocity_min = 100.0
+angular_velocity_max = 100.0
+scale_amount_min = 0.2
+color_ramp = SubResource("Gradient_3xq3j")
 
 [node name="shield" type="Area2D" parent="player"]
 scale = Vector2(5, 5)

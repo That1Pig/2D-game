@@ -42,7 +42,7 @@ func _on_body_entered(body):
 		Globals.roomprogress += 1
 		print(Globals.roomprogress)
 		
-		if Globals.roomprogress == 3:
+		if Globals.roomprogress == 5:
 			Globals.left_links.append("key_room")
 			Globals.right_links.append("key_room")
 			print("key room is now possible")

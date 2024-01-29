@@ -20,8 +20,8 @@ polygon = PackedVector2Array(3, 0, 5, 0, 7, 4, 7, 7, -7, 7, -7, 4, -5, 0, -3, 0,
 script = ExtResource("1_qc1k8")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(-0.0165548, 0.380745)
-scale = Vector2(1.01, 1.02)
+position = Vector2(-0.0165548, 0.277275)
+scale = Vector2(1.01, 1.03)
 polygon = PackedVector2Array(3, 0, 5, 0, 7, 4, 7, 7, -7, 7, -7, 4, -5, 0, -3, 0, 0, 7)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -14,7 +14,6 @@ var onboost = false
 var stuck = false
 var stuckboost = false
 
-
 func _physics_process(delta):
 	Globals.playerx = global_position.x
 	Globals.playery = global_position.y
@@ -48,15 +47,31 @@ func _physics_process(delta):
 	if stuck == true:
 		if stuckboost == false:
 			stuckboost = true
-			position.y -= 0.1
+			position.y -= 0.2
 			print("went over bump")
 			await get_tree().create_timer(0.1).timeout
 			stuckboost = false
 
-#load to main scene
-#	if health <= 0:
-#		get_tree().l
-
+	if health <= 0:
+		friction = 25
+		health = 100
+		hit = false
+		immune = false
+		directionfacing = ""
+		armour = 0
+		armour_res = 1
+		onboost = false
+		stuck = false
+		stuckboost = false
+		Globals.maxhealth = 100
+		Globals.critrate = 10
+		Globals.critmultiplier = 2
+		Globals.crithit = false
+		Globals.roomprogress = 0
+		Globals.keyfound = false
+		Globals.floor = 1
+		Globals.shortimmunity = false
+		get_tree().change_scene_to_file("res://dungeon.tscn")
 	friction = move_toward(friction,25,1)
 
 	if not is_on_floor():

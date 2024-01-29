@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b71byvesqpmvl"]
+[gd_scene load_steps=16 format=3 uid="uid://b71byvesqpmvl"]
 
 [ext_resource type="PackedScene" uid="uid://vlj84j14bwrh" path="res://player.tscn" id="1_ikq2m"]
 [ext_resource type="Script" path="res://treearea.gd" id="1_wjnna"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dl4nh4qpimj52" path="res://icon.svg" id="4_e8mke"]
 [ext_resource type="Script" path="res://interactablearea.gd" id="5_fo1n5"]
 [ext_resource type="Texture2D" uid="uid://baewkucmn2hij" path="res://tilemap.png" id="8_6hp4v"]
-[ext_resource type="Texture2D" uid="uid://biu8tc75hfidh" path="res://tilemap-characters.png" id="9_k3eph"]
 [ext_resource type="Texture2D" uid="uid://npqry4yivds0" path="res://healthbarUnder.png" id="11_6dq02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rppyn"]
@@ -137,12 +136,6 @@ texture = ExtResource("8_6hp4v")
 region_enabled = true
 region_rect = Rect2(190.052, 132.999, 17.9724, 17.9724)
 metadata/_edit_group_ = true
-
-[node name="Tilemap-characters" type="Sprite2D" parent="."]
-position = Vector2(261.072, -194.726)
-texture = ExtResource("9_k3eph")
-region_enabled = true
-region_rect = Rect2(152.752, 53.914, 18.3778, 16.7562)
 
 [connection signal="body_entered" from="npc/interactablesign" to="npc/interactablesign" method="_on_body_entered"]
 [connection signal="body_exited" from="npc/interactablesign" to="npc/interactablesign" method="_on_body_exited"]

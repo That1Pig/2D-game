@@ -2,6 +2,7 @@ extends Area2D
 var dest = Vector2()
 var direction = Vector2()
 var speed = 400
+var damageamount = randi_range(Globals.floor,Globals.floor*2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,8 +19,6 @@ func _on_area_entered(area):
 		#await $AnimationPlayer.animation_finished
 		queue_free()
 
-var damageamount = randi_range(Globals.floor,Globals.floor*2)
-
 #Damages player
 func _on_damagearea_body_entered(body):
 	if body.name == "player":
@@ -28,7 +27,6 @@ func _on_damagearea_body_entered(body):
 		body.hit = true
 		body.velocity.x=0
 		
-
 #Undamages player
 func _on_damagearea_body_exited(body):
 	if body.name == "player":

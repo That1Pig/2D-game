@@ -9,13 +9,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	#position = Vector2(Globals.playerx,Globals.playery)
-	
 	if Input.is_key_pressed(KEY_Q) or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if swordactive==false:
 			swordactive=true
 			set_collision_layer_value(2,true)
 			Globals.playerdamage = 10
+			if Globals.critrate >= randi_range(1,100):
+				$CPUParticles2D.emitting=true
+				Globals.playerdamage *= Globals.critmultiplier
+				print(Globals.playerdamage)	
 			if Globals.directionfacing_x == "left":
 				visible=true
 				$AnimationPlayer.play("swordmovementleft")
@@ -26,4 +28,3 @@ func _process(delta):
 			set_collision_layer_value(2,false)
 			swordactive=false
 			visible=false
-		

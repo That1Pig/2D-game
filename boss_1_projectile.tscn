@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://jpcx64tng2we"]
+
+[ext_resource type="Texture2D" uid="uid://ccwvmb1cwvufb" path="res://crosshair.png" id="1_trem1"]
+[ext_resource type="Script" path="res://boss_1_projectile.gd" id="1_y24k7"]
+[ext_resource type="Texture2D" uid="uid://b41gbq2ly3pmc" path="res://an-8-bit-retro-styled-pixel-art-illustration-of-chromium-free-png.webp" id="2_pqnwm"]
+[ext_resource type="Script" path="res://rock.gd" id="3_ag4mq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dmaf4"]
+
+[node name="boss1projectile" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_y24k7")
+
+[node name="crosshair" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_trem1")
+
+[node name="rock" type="Area2D" parent="."]
+visible = false
+position = Vector2(2, -8)
+scale = Vector2(0.68, 0.68)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_ag4mq")
+
+[node name="sprite" type="Sprite2D" parent="rock"]
+texture = ExtResource("2_pqnwm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock"]
+position = Vector2(-2.94118, 11.7647)
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_dmaf4")
+
+[connection signal="body_entered" from="rock" to="rock" method="_on_body_entered"]
+[connection signal="body_exited" from="rock" to="rock" method="_on_body_exited"]

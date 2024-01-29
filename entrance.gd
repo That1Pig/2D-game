@@ -10,8 +10,3 @@ func _ready():
 	else:
 		$rightblock.queue_free()
 		$room_expansion_left.queue_free()
-		
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

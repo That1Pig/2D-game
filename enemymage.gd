@@ -7,10 +7,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var immune = false
 var fireballthrown = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if fireballthrown==false:
@@ -41,17 +37,10 @@ func _on_damagearea_area_entered(area):
 			print("weapon collide")
 			immune = true
 			modulate.a = 0.5
-			if Globals.critrate >= randi_range(1,100):
-				enemyhealth -= Globals.playerdamage * Globals.critmultiplier
-			else:
-				enemyhealth -= Globals.playerdamage
+			enemyhealth -= Globals.playerdamage
 			print(enemyhealth)
 			if enemyhealth <= 0:
 				queue_free()
 			await get_tree().create_timer(0.2).timeout
 			modulate.a = 1
 			immune = false
-		
-	
-
-			

@@ -1,0 +1,146 @@
+[gd_scene load_steps=10 format=3 uid="uid://cad6yy47b2c3f"]
+
+[ext_resource type="PackedScene" uid="uid://bd2sxgfl0s5ac" path="res://background.tscn" id="1_a0h80"]
+[ext_resource type="PackedScene" uid="uid://be33ew5fwulj2" path="res://movingplatformup.tscn" id="2_hbuhd"]
+[ext_resource type="PackedScene" uid="uid://btsumbjqsh2n2" path="res://spike_strip.tscn" id="4_p2jdm"]
+[ext_resource type="PackedScene" uid="uid://dso2xygmj1b0f" path="res://goo.tscn" id="4_wj56o"]
+[ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="5_ajhkl"]
+[ext_resource type="PackedScene" uid="uid://qlyrtdvt70ge" path="res://movingplatformleft.tscn" id="5_ibr2p"]
+[ext_resource type="PackedScene" uid="uid://c2y544p3i7s7p" path="res://room_expansion_left.tscn" id="6_byxvv"]
+[ext_resource type="PackedScene" uid="uid://dooskq1oqssij" path="res://movingplatformright.tscn" id="9_0qm33"]
+[ext_resource type="PackedScene" uid="uid://dbmp8pue0rxhk" path="res://room_expansion_down.tscn" id="9_hl41i"]
+
+[node name="room_10" type="Node2D"]
+
+[node name="background" parent="." instance=ExtResource("1_a0h80")]
+position = Vector2(259, 237.555)
+scale = Vector2(3.66406, 477.11)
+
+[node name="background2" parent="." instance=ExtResource("1_a0h80")]
+position = Vector2(259, 237.555)
+scale = Vector2(3.66406, 477.11)
+
+[node name="movingplatformleft" parent="." instance=ExtResource("5_ibr2p")]
+position = Vector2(257, 190)
+scale = Vector2(1.11, 1.11)
+
+[node name="movingplatformup" parent="." instance=ExtResource("2_hbuhd")]
+position = Vector2(489, 404)
+scale = Vector2(1.07, 1.07)
+
+[node name="movingplatformup2" parent="." instance=ExtResource("2_hbuhd")]
+position = Vector2(488, 219)
+scale = Vector2(1.07, 1.07)
+
+[node name="spike_strip" parent="movingplatformup2" instance=ExtResource("4_p2jdm")]
+position = Vector2(198.131, -4.6729)
+rotation = 4.71239
+
+[node name="spike_strip2" parent="movingplatformup2" instance=ExtResource("4_p2jdm")]
+position = Vector2(198.131, -89.7196)
+rotation = 4.71239
+
+[node name="spike_strip5" parent="movingplatformup2" instance=ExtResource("4_p2jdm")]
+position = Vector2(-141.122, 50.4673)
+rotation = 4.71239
+
+[node name="spike_strip6" parent="movingplatformup2" instance=ExtResource("4_p2jdm")]
+position = Vector2(-141.121, 20.5607)
+rotation = 4.71239
+
+[node name="spike_strip3" parent="movingplatformup2" instance=ExtResource("4_p2jdm")]
+position = Vector2(-585.981, 109.346)
+rotation = 1.5708
+
+[node name="spike_strip4" parent="movingplatformup2" instance=ExtResource("4_p2jdm")]
+position = Vector2(-585.981, 53.2711)
+rotation = 1.5708
+
+[node name="spike_strip7" parent="movingplatformup2" instance=ExtResource("4_p2jdm")]
+position = Vector2(-63.5514, 50.4673)
+rotation = 1.5708
+
+[node name="spike_strip8" parent="movingplatformup2" instance=ExtResource("4_p2jdm")]
+position = Vector2(-62.6168, 21.4953)
+rotation = 1.5708
+
+[node name="movingplatformup3" parent="." instance=ExtResource("2_hbuhd")]
+position = Vector2(630, 307)
+scale = Vector2(1.07, 1.07)
+
+[node name="goo21" parent="." instance=ExtResource("4_wj56o")]
+position = Vector2(323, 439)
+
+[node name="grid" parent="." instance=ExtResource("5_ajhkl")]
+scale = Vector2(2, 2)
+cell_quadrant_size = 14
+layer_0/tile_data = PackedInt32Array(1048578, 589824, 1, 1048579, 589824, 1, 1048580, 589824, 1, 1048581, 589824, 1, 1048582, 589824, 1, 1048583, 589824, 1, 1048584, 589824, 1, 1048585, 589824, 1, 1048586, 589824, 1, 1048587, 589824, 1, 1048588, 589824, 1, 1048589, 589824, 1, 1048590, 589824, 1, 1048591, 589824, 1, 1048592, 589824, 1, 1048600, 589824, 1, 1048601, 589824, 1, 1048577, 589824, 1, 1048576, 589824, 1, 1114111, 589824, 1, 1114110, 589824, 1, 1114109, 589824, 1, 1114108, 589824, 1, 1114107, 589824, 1, 983034, 589824, 1, 983033, 589824, 1, 1048569, 589824, 1, 1114105, 589824, 1, 1114106, 589824, 1, 1048570, 589824, 1, 1114104, 589824, 1, 1048568, 589824, 1, 983032, 589824, 1, 983054, 589824, 1, 720910, 589824, 1, 655374, 589824, 1, 589838, 589824, 1, 524302, 589824, 1, 458766, 589824, 1, 458765, 589824, 1, 458764, 589824, 1, 524300, 589824, 1, 589836, 589824, 1, 655372, 589824, 1, 720908, 589824, 1, 983052, 589824, 1, 983053, 589824, 1, 720909, 589824, 1, 655373, 589824, 1, 589837, 589824, 1, 524301, 589824, 1, 393230, 589824, 1, 393229, 589824, 1, 393228, 589824, 1, 327692, 589824, 1, 327693, 589824, 1, 327694, 589824, 1, 655385, 589824, 1, 589849, 589824, 1, 524313, 589824, 1, 458777, 589824, 1, 393241, 589824, 1, 327705, 589824, 1, 262169, 589824, 1, 196633, 589824, 1, 131097, 589824, 1, 65561, 589824, 1, 24, 589824, 1, 23, 589824, 1, 22, 589824, 1, 25, 589824, 1, 21, 589824, 1, 20, 589824, 1, 19, 589824, 1, 18, 589824, 1, 17, 589824, 1, 16, 589824, 1, 15, 589824, 1, 14, 589824, 1, 13, 589824, 1, 12, 589824, 1, 11, 589824, 1, 10, 589824, 1, 9, 589824, 1, 8, 589824, 1, 7, 589824, 1, 6, 589824, 1, 5, 589824, 1, 4, 589824, 1, 3, 589824, 1, 2, 589824, 1, 1, 589824, 1, 0, 589824, 1, 65535, 589824, 1, 65534, 589824, 1, 65533, 589824, 1, 65532, 589824, 1, 65531, 589824, 1, 65530, 589824, 1, 65529, 589824, 1, 65528, 589824, 1, 458744, 589824, 1, 589816, 589824, 1, 524280, 589824, 1, 917496, 589824, 1, 851960, 589824, 1, 786424, 589824, 1, 720888, 589824, 1, 655352, 589824, 1, 786446, 589824, 1, 786445, 589824, 1, 786444, 589824, 1, 458745, 589824, 1, 458746, 589824, 1, 524282, 589824, 1, 589818, 589824, 1, 655354, 589824, 1, 720890, 589824, 1, 786426, 589824, 1, 851962, 589824, 1, 917498, 589824, 1, 917497, 589824, 1, 851961, 589824, 1, 786425, 589824, 1, 720889, 589824, 1, 655353, 589824, 1, 589817, 589824, 1, 524281, 589824, 1, 917517, 524288, 4, 720921, 589824, 1, 786457, 589824, 1, 851993, 589824, 1, 917529, 589824, 1, 983065, 589824, 1, 1048593, 589824, 1, 1048594, 589824, 1)
+
+[node name="room_expansion_left" parent="." instance=ExtResource("6_byxvv")]
+position = Vector2(-192, 98)
+
+[node name="goo" parent="." instance=ExtResource("4_wj56o")]
+position = Vector2(-131, 439)
+
+[node name="goo3" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(55, 0)
+
+[node name="goo5" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(27, 0)
+
+[node name="goo2" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(27, 0)
+
+[node name="goo6" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(83, 0)
+
+[node name="goo7" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(111, 0)
+
+[node name="goo8" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(139, 0)
+
+[node name="goo9" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(167, 0)
+
+[node name="goo10" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(195, 0)
+
+[node name="goo11" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(223, 0)
+
+[node name="goo12" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(250, 0)
+
+[node name="goo13" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(278, 0)
+
+[node name="goo14" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(278, 0)
+
+[node name="goo15" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(306, 0)
+
+[node name="goo16" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(333, 0)
+
+[node name="goo17" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(361, 0)
+
+[node name="goo18" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(389, 0)
+
+[node name="goo19" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(416, 0)
+
+[node name="goo20" parent="goo" instance=ExtResource("4_wj56o")]
+position = Vector2(444, 0)
+
+[node name="goo4" parent="goo" instance=ExtResource("4_wj56o")]
+
+[node name="movingplatformright" parent="." instance=ExtResource("9_0qm33")]
+position = Vector2(-52, 190)
+scale = Vector2(1.11, 1.11)
+
+[node name="room_expansion_down" parent="." instance=ExtResource("9_hl41i")]
+position = Vector2(601.921, 443.551)
