@@ -44,7 +44,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ggcu6"]
 resource_name = "swordmovementleft"
-length = 0.5
+length = 0.35
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -52,7 +52,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.35),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-100, -50), Vector2(-100, 50)]
@@ -64,7 +64,7 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.35),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [3.92699, 2.35619]
@@ -72,7 +72,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_vaxa6"]
 resource_name = "swordmovementright"
-length = 0.5
+length = 0.35
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -80,7 +80,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.35),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(100, -50), Vector2(100, 50)]
@@ -92,7 +92,7 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.35),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-0.785398, 0.785398]
@@ -155,8 +155,8 @@ offset_bottom = -102.339
 theme_override_font_sizes/font_size = 40
 
 [node name="weapon" type="Area2D" parent="player"]
-position = Vector2(100, -50)
-rotation = -0.785398
+position = Vector2(-100, 35.7143)
+rotation = 2.58059
 scale = Vector2(10, 5)
 collision_layer = 2
 collision_mask = 0
@@ -220,6 +220,7 @@ position = Vector2(-20.525, 0.0109024)
 shape = SubResource("RectangleShape2D_q2fd4")
 
 [node name="Timer" type="Timer" parent="player/shield"]
+wait_time = 1.5
 one_shot = true
 
 [node name="shieldenemycollision" type="StaticBody2D" parent="player/shield"]

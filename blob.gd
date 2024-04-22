@@ -61,6 +61,8 @@ func _on_damagearea_area_entered(area):
 			enemyhealth -= Globals.playerdamage
 			print(enemyhealth)
 			if enemyhealth <= 0:
+				Globals.gold += round((randi_range(10,30) / 10) + Globals.goldextragain)
+				print(Globals.gold)
 				queue_free()
 			await get_tree().create_timer(0.2).timeout
 			speed = 50

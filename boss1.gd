@@ -17,15 +17,23 @@ func _physics_process(delta):
 		
 		boss1projectilethrown=true
 		await get_tree().create_timer(1).timeout
-		for i in range(10):
-			var newboss1projectile = boss1projectilelaunch.instantiate()
-			add_child(newboss1projectile)
-			await get_tree().create_timer(0.2).timeout
-		await get_tree().create_timer(1.5).timeout
 		for i in range(20):
 			var newboss1projectile = boss1projectilelaunch.instantiate()
-			add_child(newboss1projectile)
-			await get_tree().create_timer(0.05).timeout
+			get_parent().add_child(newboss1projectile)
+			await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(1.5).timeout
+		for i in range(30):
+			var newboss1projectile = boss1projectilelaunch.instantiate()
+			get_parent().add_child(newboss1projectile)
+			await get_tree().create_timer(0.01).timeout
+		await get_tree().create_timer(1).timeout
+		for i in range(3):
+			for j in range(15):
+				var newboss1projectile = boss1projectilelaunch.instantiate()
+				get_parent().add_child(newboss1projectile)
+				await get_tree().create_timer(0.01).timeout
+			await get_tree().create_timer(0.6).timeout
+		
 		boss1projectilethrown=false
 	
 #Damages player

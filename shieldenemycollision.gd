@@ -15,7 +15,7 @@ func _process(delta):
 		_shieldreset()
 
 func _shieldreset() -> void:
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.5).timeout
 	set_collision_layer_value(2,false)
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.5).timeout
 	shieldlock = false

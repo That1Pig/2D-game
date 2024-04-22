@@ -2,17 +2,15 @@ extends CharacterBody2D
 
 const JUMP_VELOCITY = -400.0
 var friction = 25
-var health = 100
 var hit = false
 var immune = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var directionfacing = ""
 var damageamount
-var armour = 0
-var armour_res = 1
 var onboost = false
 var stuck = false
 var stuckboost = false
+var healthstorage
 
 func _physics_process(delta):
 	Globals.playerx = global_position.x
@@ -20,57 +18,69 @@ func _physics_process(delta):
 	Globals.fullposition = global_position
 	
 	#Links healthbar to health
-	get_node("HealthBar").value = health
+	get_node("HealthBar").value = Globals.health
 	
 	if hit == true and immune == false and Globals.shortimmunity == false:
 		get_node("sprite").modulate.a = 0.1
 		immune = true
-		health = (health - damageamount + armour) * armour_res
+		healthstorage = (Globals.health - damageamount + Globals.armour) * Globals.armour_res
+		if (damageamount - Globals.armour) * Globals.armour_res <= 0:
+			Globals.health = Globals.health-1
+		else:
+			Globals.health = healthstorage
 		await get_tree().create_timer(0.75).timeout
 		immune = false
 		get_node("sprite").modulate.a = 1
 	if hit == true and immune == false and Globals.shortimmunity == true:
 		get_node("sprite").modulate.a = 0.5
 		immune = true
-		health = (health - damageamount + armour) * armour_res
-		await get_tree().create_timer(0.1).timeout
+		healthstorage = (Globals.health - damageamount + Globals.armour) * Globals.armour_res
+		if (damageamount - Globals.armour) * Globals.armour_res <= 0:
+			Globals.health = Globals.health-1
+		else:
+			Globals.health = healthstorage
+		await get_tree().create_timer(0.05).timeout
 		immune = false
 		get_node("sprite").modulate.a = 1
 		Globals.shortimmunity=false
-	$HealthValue.text = str(health)
+	$HealthValue.text = str(Globals.health)
+
+
 
 	if is_on_wall() and is_on_floor():
 		stuck = true
 	else:
 		stuck = false
-	
 	if stuck == true:
 		if stuckboost == false:
 			stuckboost = true
-			position.y -= 0.2
+			position.y -= 0.25
 			print("went over bump")
 			await get_tree().create_timer(0.1).timeout
 			stuckboost = false
 
-	if health <= 0:
+	if Globals.health <= 0:
 		friction = 25
-		health = 100
+		Globals.health = 100
 		hit = false
 		immune = false
 		directionfacing = ""
-		armour = 0
-		armour_res = 1
+		Globals.armour = 0
+		Globals.armour_res = 1
 		onboost = false
 		stuck = false
 		stuckboost = false
 		Globals.maxhealth = 100
 		Globals.critrate = 10
-		Globals.critmultiplier = 2
+		Globals.critmultiplier = 1.5
+		Globals.basedamage = 10
 		Globals.crithit = false
 		Globals.roomprogress = 0
 		Globals.keyfound = false
 		Globals.floor = 1
 		Globals.shortimmunity = false
+		Globals.gold = 0
+		Globals.goldextragain = 0
 		get_tree().change_scene_to_file("res://dungeon.tscn")
 	friction = move_toward(friction,25,1)
 

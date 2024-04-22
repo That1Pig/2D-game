@@ -15,14 +15,14 @@ func _process(delta):
 			shieldactive = true
 			$shieldsprite.visible = true
 			set_collision_layer_value(2,true)
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(1.5).timeout
 			set_collision_layer_value(2,false)
 			$Timer.start()
 			$shieldsprite.visible = false
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(1.5).timeout
 			shieldactive = false
 			$shieldsprite.visible = false
-	$cooldownanimationtimer.value = ($Timer.time_left * 100)
+	$cooldownanimationtimer.value = ($Timer.time_left * 66.666)
 
 	if shieldactive == true:
 		if Globals.directionfacing == "left":

@@ -12,9 +12,8 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.name == "player":
 		Globals.floor += 1
-		if Globals.floor != 3:
+		if Globals.floor == 1:
 			print("entering floor" + str(Globals.floor))
-			
 			#Reset floor
 			Globals.directionfacing = "right"
 			Globals.roomprogress = 0
@@ -23,5 +22,37 @@ func _on_body_entered(body):
 			Globals.left_links.erase("floor_exit_room_left")
 			Globals.right_links.erase("floor_exit_room_right")
 			get_tree().reload_current_scene()
-		else:
+			
+		if Globals.floor == 2:
+			print("entering floor" + str(Globals.floor))
+			#Reset floor
+			Globals.directionfacing = "right"
+			Globals.roomprogress = 0
+			print("room progress reset")
+			Globals.keyfound = false
+			Globals.left_links.erase("floor_exit_room_left")
+			Globals.right_links.erase("floor_exit_room_right")
+			get_tree().reload_current_scene()
+			
+			#New rooms on floor 2:
+			Globals.left_links.erase("room_5")
+			Globals.right_links.erase("room_5")
+			
+			Globals.left_links.erase("room_1")
+			Globals.right_links.erase("room_1")
+			
+			Globals.down_links.erase("room_4")
+			Globals.right_links.erase			("room_4")
+			
+			Globals.left_links.append("room_11")
+			Globals.right_links.append("room_11")
+			
+			Globals.left_links.append("room_12")
+			Globals.right_links.append("room_12")
+			
+			Globals.down_links.append("room_13")
+			Globals.right_links.append("room_13")
+			
+			
+		if Globals.floor == 3:
 			get_tree().change_scene_to_file("res://boss_room1.tscn")

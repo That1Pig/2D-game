@@ -1,34 +1,38 @@
 [gd_scene load_steps=5 format=3 uid="uid://s266tys5rpl1"]
 
 [ext_resource type="Script" path="res://enemymage.gd" id="1_ic02n"]
-[ext_resource type="Texture2D" uid="uid://canfocmbi3iwe" path="res://the-orios.png" id="2_hcntg"]
+[ext_resource type="Texture2D" uid="uid://dfqoixmc0uw7o" path="res://iconsprites.png" id="2_5h7bd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl5vd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0lds"]
 
-[node name="enemymage" type="StaticBody2D"]
+[node name="Node2D" type="Node2D"]
+
+[node name="enemymage" type="StaticBody2D" parent="."]
 scale = Vector2(0.4, 0.4)
 collision_layer = 10
 collision_mask = 14
 script = ExtResource("1_ic02n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemymage"]
 scale = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_pl5vd")
 
-[node name="damagearea" type="Area2D" parent="."]
+[node name="damagearea" type="Area2D" parent="enemymage"]
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="damagearea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemymage/damagearea"]
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_p0lds")
 
-[node name="The-orios" type="Sprite2D" parent="."]
+[node name="mage" type="Sprite2D" parent="enemymage"]
 position = Vector2(5.24521e-06, 1.24999)
-scale = Vector2(0.859375, 0.771484)
-texture = ExtResource("2_hcntg")
+scale = Vector2(8, 8)
+texture = ExtResource("2_5h7bd")
+region_enabled = true
+region_rect = Rect2(57.7023, 40.6087, 22.7019, 22.4317)
 
-[connection signal="area_entered" from="damagearea" to="." method="_on_damagearea_area_entered"]
-[connection signal="body_entered" from="damagearea" to="." method="_on_damagearea_body_entered"]
-[connection signal="body_exited" from="damagearea" to="." method="_on_damagearea_body_exited"]
+[connection signal="area_entered" from="enemymage/damagearea" to="enemymage" method="_on_damagearea_area_entered"]
+[connection signal="body_entered" from="enemymage/damagearea" to="enemymage" method="_on_damagearea_body_entered"]
+[connection signal="body_exited" from="enemymage/damagearea" to="enemymage" method="_on_damagearea_body_exited"]

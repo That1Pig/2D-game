@@ -25,3 +25,39 @@ z_index = -15
 position = Vector2(120.955, 385.067)
 scale = Vector2(100.931, 18276.1)
 texture = SubResource("GradientTexture1D_sne6r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="healthstat" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="maxhealthstat" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "asdfasdfasdfasdfasdfasdfasdfasdf"
+
+[node name="attackstat" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "asdfasdfasdfasdfasdfasdfasdfasdf"
+
+[node name="armourstat" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "asdfasdfasdfasdfasdfasdfasdfasdf"
+
+[node name="extracoinstat" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "asdfasdfasdfasdfasdfasdfasdfasdf"
+
+[node name="critstat" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "asdfasdfasdfasdfasdfasdfasdfasdf"
+
+[node name="Label8" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "asdfasdfasdfasdfasdfasdfasdfasdf"

@@ -1,7 +1,7 @@
 extends Area2D
 var dest = Vector2()
 var direction = Vector2()
-var speed = 400
+var speed = 200
 var damageamount = randi_range(Globals.floor,Globals.floor*2)
 
 # Called when the node enters the scene tree for the first time.

@@ -13,9 +13,15 @@ func _physics_process(delta):
 		fireballthrown=true
 		for i in range(5):
 			var newfireball = fireballlaunch.instantiate()
-			add_child(newfireball)
-			await get_tree().create_timer(0.2).timeout
-		await get_tree().create_timer(2).timeout
+			get_parent().add_child(newfireball)
+			await get_tree().create_timer(0.15).timeout
+		await get_tree().create_timer(0.5).timeout
+		for i in range(5):
+			var newfireball = fireballlaunch.instantiate()
+			get_parent().add_child(newfireball)
+			await get_tree().create_timer(0.15).timeout
+		await get_tree().create_timer(1.6).timeout
+		
 		fireballthrown=false
 
 #Damages player
@@ -40,6 +46,8 @@ func _on_damagearea_area_entered(area):
 			enemyhealth -= Globals.playerdamage
 			print(enemyhealth)
 			if enemyhealth <= 0:
+				Globals.gold += round((randi_range(30,50) / 10) + Globals.goldextragain)
+				print(Globals.gold)
 				queue_free()
 			await get_tree().create_timer(0.2).timeout
 			modulate.a = 1

@@ -22,6 +22,7 @@ offset_top = -111.0
 offset_right = 45.0
 offset_bottom = -85.0
 text = "E?"
+metadata/_edit_use_anchors_ = true
 
 [node name="textandbox" type="Node2D" parent="interactable"]
 position = Vector2(5, -111)

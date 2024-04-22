@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6vf421ar5wtb"]
+[gd_scene load_steps=7 format=3 uid="uid://b6vf421ar5wtb"]
 
 [ext_resource type="PackedScene" uid="uid://dso2xygmj1b0f" path="res://goo.tscn" id="1_sp8iu"]
 [ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_toptr"]
 [ext_resource type="PackedScene" uid="uid://c2y544p3i7s7p" path="res://room_expansion_left.tscn" id="2_dgnvh"]
 [ext_resource type="PackedScene" uid="uid://bd2sxgfl0s5ac" path="res://background.tscn" id="3_77fp7"]
 [ext_resource type="PackedScene" uid="uid://b0gsa10hf0b43" path="res://room_expansion_right.tscn" id="4_vw0gm"]
-[ext_resource type="PackedScene" uid="uid://btsumbjqsh2n2" path="res://spike_strip.tscn" id="6_hhix4"]
 [ext_resource type="PackedScene" uid="uid://how17e0e2xfe" path="res://fallingplatform.tscn" id="7_r8p45"]
 
 [node name="room_8" type="Node2D"]
@@ -68,19 +67,6 @@ scale = Vector2(1.75, 1.25)
 [node name="goo9" parent="." instance=ExtResource("1_sp8iu")]
 position = Vector2(570, 436)
 scale = Vector2(1.75, 1.25)
-
-[node name="spike_strip" parent="." instance=ExtResource("6_hhix4")]
-position = Vector2(263, 223)
-rotation = -3.14159
-
-[node name="spike_strip2" parent="spike_strip" instance=ExtResource("6_hhix4")]
-position = Vector2(-168, 0)
-
-[node name="spike_strip4" parent="spike_strip" instance=ExtResource("6_hhix4")]
-position = Vector2(26, 1.52588e-05)
-
-[node name="spike_strip3" parent="spike_strip" instance=ExtResource("6_hhix4")]
-position = Vector2(-279, -1.00002)
 
 [node name="fallingplatform2" parent="." instance=ExtResource("7_r8p45")]
 position = Vector2(385, 376)

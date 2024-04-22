@@ -3,10 +3,12 @@ extends Node
 #Initially
 var playerx = int()
 var playery = int()
+var health = 100
 var maxhealth = 100
 var playerdamage = 0
+var basedamage = 10
 var critrate = 10
-var critmultiplier = 2
+var critmultiplier = 1.5
 var crithit = false
 var fullposition = Vector2()
 var directionfacing = "right"
@@ -16,6 +18,10 @@ var roomprogress = 0
 var keyfound = false
 var floor = 1
 var shortimmunity = false
+var gold = 0
+var goldextragain = 0
+var armour = 0
+var armour_res = 1
 
 #Room pool - These are the rooms accessible by the current floor, separated into various links.
 #Rooms are added and removed in different floors and conditions
@@ -25,8 +31,8 @@ var shortimmunity = false
 # ----- These represent rooms accessible by an exit -----
 #Example: A room with right and up entrance/exits are apart of right and up links
 
-var left_links = ["room_1","room_2","room_3","room_5","room_6","room_7","room_8","room_9","room_10"]
-var right_links = ["room_1","room_2","room_4","room_5","room_6","room_8","room_9"]
+var left_links = ["room_1","room_2","room_3","room_5","room_6","room_7","room_8","room_9","room_10","shop"]
+var right_links = ["room_1","room_2","room_4","room_5","room_6","room_8","room_9","shop"]
 var up_links = ["room_3","room_7"]
 var down_links = ["room_4","room_10"]
 
