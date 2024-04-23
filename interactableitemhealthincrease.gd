@@ -11,7 +11,7 @@ func _ready():
 	cost = randi_range(1,Globals.floor) * randi_range(3,5)
 	healthincrease = round(cost * randi_range(2,4) * 2)
 	
-	$itemdescription.text = "Cost:" + str(cost) 
+	$itemdescription.text = "Cost:" + str(cost) + str("\n") + "Instant health: " + str(healthincrease)
 	
 	$itemdescription.visible = false
 	

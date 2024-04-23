@@ -11,7 +11,7 @@ func _ready():
 	cost = randi_range(1,Globals.floor) * randi_range(3,5)
 	defincrease = round(Globals.floor * 0.4 * cost)
 	
-	$itemdescription.text = "Cost:" + str(cost) 
+	$itemdescription.text = "Cost:" + str(cost) + str("\n") + "Defence increase: " + str(defincrease)
 	
 	$itemdescription.visible = false
 	

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyg30hk3w4lfb"]
+[gd_scene load_steps=7 format=3 uid="uid://cyg30hk3w4lfb"]
 
 [ext_resource type="PackedScene" uid="uid://vlj84j14bwrh" path="res://player.tscn" id="1_txlnt"]
 [ext_resource type="Script" path="res://dungeon.gd" id="1_ufg8n"]
 [ext_resource type="PackedScene" uid="uid://1ixbruwkyhtk" path="res://entrance.tscn" id="2_ovqxs"]
+[ext_resource type="Script" path="res://stats.gd" id="4_see43"]
 
 [sub_resource type="Gradient" id="Gradient_n54fo"]
 offsets = PackedFloat32Array(0)
@@ -27,37 +28,13 @@ scale = Vector2(100.931, 18276.1)
 texture = SubResource("GradientTexture1D_sne6r")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("4_see43")
 
-[node name="healthstat" type="Label" parent="CanvasLayer"]
+[node name="stats" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="maxhealthstat" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
+[node name="coin" type="Label" parent="CanvasLayer"]
+offset_left = 1087.0
+offset_right = 1127.0
 offset_bottom = 23.0
-text = "asdfasdfasdfasdfasdfasdfasdfasdf"
-
-[node name="attackstat" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "asdfasdfasdfasdfasdfasdfasdfasdf"
-
-[node name="armourstat" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "asdfasdfasdfasdfasdfasdfasdfasdf"
-
-[node name="extracoinstat" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "asdfasdfasdfasdfasdfasdfasdfasdf"
-
-[node name="critstat" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "asdfasdfasdfasdfasdfasdfasdfasdf"
-
-[node name="Label8" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "asdfasdfasdfasdfasdfasdfasdfasdf"

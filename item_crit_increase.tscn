@@ -42,9 +42,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd27q"]
-size = Vector2(8.17882, 7.42543)
+size = Vector2(32.4227, 45.7964)
 
 [node name="item_crit_increase" type="Node2D"]
+scale = Vector2(2, 2)
 
 [node name="Iconsprites" type="Sprite2D" parent="."]
 texture = ExtResource("2_836ys")
@@ -59,13 +60,11 @@ libraries = {
 
 [node name="interactable" type="Area2D" parent="."]
 position = Vector2(0, 1.90735e-06)
-scale = Vector2(0.491535, 0.541142)
 collision_layer = 2
 script = ExtResource("2_33h8y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
-position = Vector2(3.8147e-06, 0)
-scale = Vector2(8, 8)
+position = Vector2(0.121961, 7.1018)
 shape = SubResource("RectangleShape2D_hd27q")
 
 [node name="itemdescription" type="Label" parent="interactable"]
@@ -73,6 +72,7 @@ offset_left = -32.5511
 offset_top = -55.4383
 offset_right = 7.44891
 offset_bottom = -29.4383
+scale = Vector2(0.4, 0.4)
 metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="interactable" to="interactable" method="_on_body_entered"]

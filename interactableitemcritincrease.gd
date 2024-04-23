@@ -13,7 +13,7 @@ func _ready():
 	critrateincrease = randi_range(1,2)
 	critdamageincrease = round(cost * Globals.floor * 0.3)
 	
-	$itemdescription.text = "Cost:" + str(cost) 
+	$itemdescription.text = "Cost:" + str(cost) + str("\n") + "Crit rate increase: " + str(critrateincrease) + "%" + str("\n") + "Crit damage increase: " + str(critdamageincrease) + "%"
 	
 	$itemdescription.visible = false
 	

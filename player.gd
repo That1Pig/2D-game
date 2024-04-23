@@ -55,6 +55,17 @@ func _physics_process(delta):
 		if stuckboost == false:
 			stuckboost = true
 			position.y -= 0.25
+			if Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_A):
+				#scale.x = -.2
+				velocity.x = move_toward(velocity.x,-300.0,50)
+				Globals.directionfacing = "left"
+				Globals.directionfacing_x = "left"
+		
+			if Input.is_key_pressed(KEY_RIGHT) or Input.is_key_pressed(KEY_D):
+				#scale.x = .2
+				velocity.x = move_toward(velocity.x,300.0,50)
+				Globals.directionfacing = "right"
+				Globals.directionfacing_x = "right"
 			print("went over bump")
 			await get_tree().create_timer(0.1).timeout
 			stuckboost = false

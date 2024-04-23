@@ -11,7 +11,7 @@ func _ready():
 	cost = randi_range(1,Globals.floor) * randi_range(3,5)
 	goldincrease = randi_range(1,3)
 	
-	$itemdescription.text = "Cost:" + str(cost) 
+	$itemdescription.text = "Cost:" + str(cost) + str("\n") + "Extra coin gain: " + str(goldincrease)
 	
 	$itemdescription.visible = false
 	

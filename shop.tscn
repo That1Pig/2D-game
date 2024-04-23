@@ -33,7 +33,7 @@ region_enabled = true
 region_rect = Rect2(0.749013, 4.83066, 98.375, 30.2692)
 
 [node name="shopitemslot" parent="." instance=ExtResource("6_hejht")]
-position = Vector2(412, 328)
+position = Vector2(413, 302)
 
 [node name="shopitemslot2" parent="." instance=ExtResource("6_hejht")]
-position = Vector2(232, 328)
+position = Vector2(233, 302)
