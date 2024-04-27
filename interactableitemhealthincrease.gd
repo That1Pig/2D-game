@@ -22,7 +22,7 @@ func _process(delta):
 		Globals.gold -= cost
 		Globals.health += healthincrease
 		get_parent().queue_free()
-	print(Globals.gold)
+
 			
 
 func _on_body_entered(body):

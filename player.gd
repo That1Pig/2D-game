@@ -66,7 +66,6 @@ func _physics_process(delta):
 				velocity.x = move_toward(velocity.x,300.0,50)
 				Globals.directionfacing = "right"
 				Globals.directionfacing_x = "right"
-			print("went over bump")
 			await get_tree().create_timer(0.1).timeout
 			stuckboost = false
 
@@ -92,6 +91,12 @@ func _physics_process(delta):
 		Globals.shortimmunity = false
 		Globals.gold = 0
 		Globals.goldextragain = 0
+		Globals.roompity = []
+		Globals.bannedrooms = ["entrance","key_room","floor_exit_room_left","floor_exit_room_right"]
+		Globals.left_links = ["room_1","room_2","room_3","room_5","room_6","room_7","room_8","room_9","room_10","shop","room_14","room_4","room_21"]
+		Globals.right_links = ["room_1","room_2","room_4","room_5","room_6","room_8","room_9","shop","room_10","room_15","room_16","room_20"]
+		Globals.up_links = ["room_3","room_7","room_14","room_15","room_16"]
+		Globals.down_links = ["room_17","room_19","room_20","room_21"]
 		get_tree().change_scene_to_file("res://dungeon.tscn")
 	friction = move_toward(friction,25,1)
 

@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://bemc0es200ry2"]
+
+[ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_gdscx"]
+[ext_resource type="PackedScene" uid="uid://bd2sxgfl0s5ac" path="res://background.tscn" id="2_w848e"]
+[ext_resource type="PackedScene" uid="uid://dltp2ieeaovk2" path="res://room_expansion_up.tscn" id="3_6c6lw"]
+[ext_resource type="PackedScene" uid="uid://cssnyq15h3c40" path="res://spring.tscn" id="4_n83ym"]
+[ext_resource type="PackedScene" uid="uid://bh4j0mv718h8i" path="res://blob.tscn" id="5_cmswy"]
+[ext_resource type="PackedScene" uid="uid://dbmp8pue0rxhk" path="res://room_expansion_down.tscn" id="7_ecyq2"]
+[ext_resource type="PackedScene" uid="uid://cbcoyw5gcj8mj" path="res://enemycollidearea.tscn" id="8_5xytn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmgxj"]
+size = Vector2(236.064, 0.816447)
+
+[node name="room_17" type="Node2D"]
+
+[node name="grid" parent="." instance=ExtResource("1_gdscx")]
+scale = Vector2(2, 2)
+cell_quadrant_size = 14
+layer_0/tile_data = PackedInt32Array(917521, 589824, 1, 917522, 1, 2, 983058, 1, 2, 983057, 589824, 1, 1048593, 589824, 1, 1048594, 589824, 1, 851986, 1, 2, 851985, 589824, 1, 1048595, 589824, 1, 983059, 1, 2, 917523, 1, 2, 851987, 1, 0, 983060, 1, 2, 983061, 1, 2, 983062, 1, 2, 983063, 1, 2, 851989, 1, 0, 851988, 1, 0, 917524, 1, 2, 917525, 1, 2, 917526, 1, 2, 917527, 1, 2, 1048596, 589824, 1, 1048597, 589824, 1, 1048598, 589824, 1, 1048599, 589824, 1, 1048605, 589824, 1, 851990, 1, 0, 851991, 1, 0, 983069, 1, 2, 917533, 1, 2, 851997, 1, 2, 851998, 589824, 1, 917534, 589824, 1, 983070, 589824, 1, 1048606, 589824, 1, 655377, 589824, 1, 720913, 589824, 1, 786449, 589824, 1, 655378, 589824, 1, 720914, 1, 2, 786450, 1, 2, 655389, 589824, 1, 720925, 1, 2, 786461, 1, 2, 655390, 589824, 1, 720926, 589824, 1, 786462, 589824, 1, 655384, 589824, 1, 655385, 589824, 1, 655386, 589824, 1, 655387, 589824, 1, 655388, 589824, 1, 983064, 327681, 1, 983065, 393217, 0)
+
+[node name="background" parent="." instance=ExtResource("2_w848e")]
+position = Vector2(672, 377.555)
+scale = Vector2(1.52344, 197.11)
+
+[node name="Area2D" type="Area2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Area2D"]
+position = Vector2(0.158218, 0.00343049)
+shape = SubResource("RectangleShape2D_bmgxj")
+
+[node name="room_expansion_up" parent="." instance=ExtResource("3_6c6lw")]
+position = Vector2(602, 313)
+
+[node name="Spring2" parent="." instance=ExtResource("4_n83ym")]
+position = Vector2(698, 415)
+
+[node name="Spring3" parent="." instance=ExtResource("4_n83ym")]
+position = Vector2(554, 359)
+
+[node name="blob" parent="." instance=ExtResource("5_cmswy")]
+position = Vector2(580, 362)
+
+[node name="room_expansion_down" parent="." instance=ExtResource("7_ecyq2")]
+position = Vector2(741, 443)
+
+[node name="enemycollidearea" parent="." instance=ExtResource("8_5xytn")]
+position = Vector2(703, 334)
+scale = Vector2(3, 3)

@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://batp64yqv8a60"]
+[gd_scene load_steps=9 format=3 uid="uid://batp64yqv8a60"]
 
 [ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_j512f"]
 [ext_resource type="PackedScene" uid="uid://b0gsa10hf0b43" path="res://room_expansion_right.tscn" id="2_txt56"]
 [ext_resource type="PackedScene" uid="uid://c2y544p3i7s7p" path="res://room_expansion_left.tscn" id="3_flkce"]
+[ext_resource type="PackedScene" uid="uid://cpuu4yujsyqm7" path="res://blobton.tscn" id="5_800ib"]
 [ext_resource type="PackedScene" uid="uid://ck4yx37y14pk0" path="res://swingingsawright.tscn" id="5_m5idq"]
-[ext_resource type="PackedScene" uid="uid://bh4j0mv718h8i" path="res://blob.tscn" id="5_ui0k3"]
 
 [sub_resource type="Gradient" id="Gradient_wvcfo"]
 offsets = PackedFloat32Array(1)
@@ -12,6 +12,9 @@ colors = PackedColorArray(0.283423, 0.693999, 0.362384, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_84jmp"]
 gradient = SubResource("Gradient_wvcfo")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33tsi"]
+size = Vector2(56.4571, 55.5146)
 
 [node name="room_12" type="Node2D"]
 
@@ -26,17 +29,23 @@ position = Vector2(575.338, 322)
 [node name="room_expansion_left" parent="." instance=ExtResource("3_flkce")]
 position = Vector2(96.7323, 321.964)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="."]
 z_index = -8
 position = Vector2(336, 253.5)
 scale = Vector2(8.75, 6.95313)
 texture = SubResource("GradientTexture2D_84jmp")
 
-[node name="blob" parent="." instance=ExtResource("5_ui0k3")]
-position = Vector2(449, 391)
+[node name="Area2D" type="Area2D" parent="background"]
 
-[node name="blob2" parent="." instance=ExtResource("5_ui0k3")]
-position = Vector2(232, 392)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Area2D"]
+position = Vector2(0.228561, -0.503368)
+shape = SubResource("RectangleShape2D_33tsi")
 
 [node name="swingingsawright" parent="." instance=ExtResource("5_m5idq")]
 position = Vector2(334, 256)
+
+[node name="blobton" parent="." instance=ExtResource("5_800ib")]
+position = Vector2(251, 363)
+
+[node name="blobton2" parent="." instance=ExtResource("5_800ib")]
+position = Vector2(476, 387)

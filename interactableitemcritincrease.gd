@@ -27,7 +27,7 @@ func _process(delta):
 		get_parent().queue_free()
 		print(Globals.critrate)
 		print(Globals.critmultiplier)
-	print(Globals.gold)
+
 			
 
 func _on_body_entered(body):

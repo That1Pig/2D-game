@@ -24,7 +24,7 @@ func _process(delta):
 		Globals.health += maxhealthincrease
 		print(Globals.maxhealth)
 		get_parent().queue_free()
-	print(Globals.gold)
+
 			
 
 func _on_body_entered(body):

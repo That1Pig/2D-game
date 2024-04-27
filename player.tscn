@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://vlj84j14bwrh"]
+[gd_scene load_steps=21 format=3 uid="uid://vlj84j14bwrh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k4gdq"]
 [ext_resource type="Texture2D" uid="uid://dl4nh4qpimj52" path="res://icon.svg" id="2_xap8q"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://shield.gd" id="7_jvgea"]
 [ext_resource type="Texture2D" uid="uid://dxoc1jytq8ad6" path="res://pixilart-drawing.png" id="7_umksy"]
 [ext_resource type="Script" path="res://shieldenemycollision.gd" id="8_fd27b"]
+[ext_resource type="Texture2D" uid="uid://ckr0r7g8ltf55" path="res://timer_121243.png" id="9_4n2ih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omena"]
 
@@ -210,10 +211,10 @@ offset_left = -26.5901
 offset_top = -46.3389
 offset_right = 101.41
 offset_bottom = 81.6611
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.025, 0.025)
 value = 38.0
 fill_mode = 4
-texture_progress = ExtResource("2_xap8q")
+texture_progress = ExtResource("9_4n2ih")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/shield"]
 position = Vector2(-20.525, 0.0109024)

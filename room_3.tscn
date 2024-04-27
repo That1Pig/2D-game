@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgq825epi8auc"]
+[gd_scene load_steps=8 format=3 uid="uid://bgq825epi8auc"]
 
 [ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_byjvi"]
 [ext_resource type="PackedScene" uid="uid://dltp2ieeaovk2" path="res://room_expansion_up.tscn" id="3_84kj7"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://btsumbjqsh2n2" path="res://spike_strip.tscn" id="4_ttk1r"]
 [ext_resource type="PackedScene" uid="uid://cssnyq15h3c40" path="res://spring.tscn" id="5_fu73a"]
 [ext_resource type="PackedScene" uid="uid://bd2sxgfl0s5ac" path="res://background.tscn" id="6_uir6h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40dyw"]
+size = Vector2(236.064, 1.36522)
 
 [node name="room_3" type="Node2D"]
 
@@ -37,6 +40,12 @@ position = Vector2(499.684, 304.769)
 position = Vector2(335.3, 503.148)
 scale = Vector2(2.6229, 335.736)
 
-[node name="background2" parent="." instance=ExtResource("6_uir6h")]
-position = Vector2(504.253, 253.493)
-scale = Vector2(1.31032, 170.558)
+[node name="background2" parent="background" instance=ExtResource("6_uir6h")]
+position = Vector2(64.4146, -0.743605)
+scale = Vector2(0.499569, 0.508012)
+
+[node name="Area2D" type="Area2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Area2D"]
+position = Vector2(0.158218, -0.270958)
+shape = SubResource("RectangleShape2D_40dyw")

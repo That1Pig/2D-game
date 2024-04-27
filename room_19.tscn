@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1xpd17usiejr"]
+
+[ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_kb7v3"]
+[ext_resource type="PackedScene" uid="uid://bd2sxgfl0s5ac" path="res://background.tscn" id="2_i2jhl"]
+[ext_resource type="PackedScene" uid="uid://dltp2ieeaovk2" path="res://room_expansion_up.tscn" id="3_erxy8"]
+[ext_resource type="PackedScene" uid="uid://cssnyq15h3c40" path="res://spring.tscn" id="4_wwkyt"]
+[ext_resource type="PackedScene" uid="uid://dbmp8pue0rxhk" path="res://room_expansion_down.tscn" id="5_xfr7s"]
+[ext_resource type="PackedScene" uid="uid://ck4yx37y14pk0" path="res://swingingsawright.tscn" id="6_grxt8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooedc"]
+size = Vector2(198.426, 0.816447)
+
+[node name="room_18" type="Node2D"]
+
+[node name="grid" parent="." instance=ExtResource("1_kb7v3")]
+position = Vector2(1343, 0)
+scale = Vector2(-2, 2)
+cell_quadrant_size = 14
+layer_0/tile_data = PackedInt32Array(1048605, 589824, 1, 851998, 589824, 1, 917534, 589824, 1, 983070, 589824, 1, 1048606, 589824, 1, 655390, 589824, 1, 720926, 589824, 1, 786462, 589824, 1, 589854, 589824, 1, 393246, 589824, 1, 458782, 589824, 1, 524318, 589824, 1, 327710, 589824, 1, 262174, 589824, 1, 196638, 589824, 1, 131102, 589824, 1, 65566, 589824, 1, 30, 589824, 1, -65506, 589824, 1, -131042, 589824, 1, -196578, 589824, 1, -262114, 589824, 1, -327650, 589824, 1, -393186, 589824, 1, -393194, 589824, 1, -327658, 589824, 1, -262122, 589824, 1, -196586, 589824, 1, -131050, 589824, 1, -65514, 589824, 1, 22, 589824, 1, 65558, 589824, 1, 131094, 589824, 1, 196630, 589824, 1, 262166, 589824, 1, 327702, 589824, 1, 393238, 589824, 1, 458774, 589824, 1, 524310, 589824, 1, 589846, 589824, 1, 655382, 589824, 1, 720918, 589824, 1, 786454, 589824, 1, 851990, 589824, 1, 917526, 589824, 1, 983062, 589824, 1, 1048598, 589824, 1, 1048599, 589824, 1, 1048604, 1245184, 5, 1048603, 1179648, 5, -393187, 589824, 1, -393193, 589824, 1, -196583, 1245184, 6, -196584, 1245184, 5, -196585, 1245184, 5)
+
+[node name="background" parent="." instance=ExtResource("2_i2jhl")]
+position = Vector2(601.5, 154.055)
+scale = Vector2(0.972656, 644.111)
+
+[node name="Area2D" type="Area2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Area2D"]
+position = Vector2(-2.05615, 0.00343047)
+shape = SubResource("RectangleShape2D_ooedc")
+
+[node name="room_expansion_up" parent="." instance=ExtResource("3_erxy8")]
+position = Vector2(602, -135)
+
+[node name="Spring2" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 85)
+
+[node name="Spring4" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 414)
+
+[node name="Spring3" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 444)
+
+[node name="Spring5" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 384)
+
+[node name="Spring6" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 25)
+
+[node name="Spring7" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 55)
+
+[node name="Spring8" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, -4)
+
+[node name="Spring9" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 325)
+
+[node name="Spring10" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 355)
+
+[node name="Spring11" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 295)
+
+[node name="Spring12" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, -64)
+
+[node name="Spring13" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, -34)
+
+[node name="Spring14" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, -94)
+
+[node name="Spring15" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 235)
+
+[node name="Spring16" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 265)
+
+[node name="Spring17" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 205)
+
+[node name="Spring19" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, -124)
+
+[node name="Spring21" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 146)
+
+[node name="Spring22" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 176)
+
+[node name="Spring23" parent="." instance=ExtResource("4_wwkyt")]
+position = Vector2(544, 116)
+
+[node name="room_expansion_down" parent="." instance=ExtResource("5_xfr7s")]
+position = Vector2(600, 443)
+
+[node name="swingingsawright" parent="." instance=ExtResource("6_grxt8")]
+position = Vector2(706, 243)
+
+[node name="swingingsawright2" parent="." instance=ExtResource("6_grxt8")]
+position = Vector2(706, -61)

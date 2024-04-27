@@ -1,14 +1,11 @@
 extends CharacterBody2D
 
 var direction = 1
-var speed = 50
-var damageamount = 10 + randi_range(Globals.floor,Globals.floor*2)
-var enemyhealth = 30 + (5 * Globals.floor - 5)
+var speed = 150
+var damageamount = 15 + randi_range(Globals.floor,Globals.floor*2)
+var enemyhealth = 40 + (5 * Globals.floor - 5)
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var immune = false
-
-func _ready():
-	$AnimatedSprite2D.frame = 0
 
 #Movement and wall bounce
 func _physics_process(delta):
@@ -20,23 +17,21 @@ func _physics_process(delta):
 		
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	if is_on_floor():
+		velocity.y -= 400
 		
-	if not $raycast_floor.is_colliding():
-		direction = direction*-1
-		scale.x = scale.x * -1
-		#https://www.youtube.com/watch?v=AG4g5jaQYo0
+	if is_on_wall_only():
+		velocity.y *= -1
 		
 #Detects player nearby	
 func _on_area_2d_body_entered(body):
 	if body.name == "player":
-		$AnimatedSprite2D.frame = 1
-		speed = 100
+		speed = 200
 
 #Undetects player nearby	
 func _on_area_2d_body_exited(body):
 	if body.name == "player":
-		$AnimatedSprite2D.frame = 0
-		speed = 50	
+		speed = 150	
 
 #Damages player
 func _on_damagearea_body_entered(body):
@@ -59,9 +54,9 @@ func _on_damagearea_area_entered(area):
 			speed = -20
 			enemyhealth -= Globals.playerdamage
 			if enemyhealth <= 0:
-				Globals.gold += round((randi_range(10,30) / 10) + Globals.goldextragain)
+				Globals.gold += round((randi_range(30,40) / 10) + Globals.goldextragain)
 				queue_free()
 			await get_tree().create_timer(0.2).timeout
-			speed = 50
+			speed = 150
 			modulate.a = 1
 			immune = false
