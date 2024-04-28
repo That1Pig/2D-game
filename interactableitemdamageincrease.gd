@@ -23,7 +23,7 @@ func _process(delta):
 		Globals.basedamage += damageincrease
 		get_parent().queue_free()
 		print(Globals.basedamage)
-
+	print(Globals.gold)
 			
 
 func _on_body_entered(body):

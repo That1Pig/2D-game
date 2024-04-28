@@ -23,6 +23,7 @@ func _process(delta):
 		Globals.goldextragain += goldincrease
 		get_parent().queue_free()
 		print(Globals.goldextragain)
+	print(Globals.gold)
 			
 
 func _on_body_entered(body):

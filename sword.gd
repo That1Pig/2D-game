@@ -16,6 +16,7 @@ func _process(delta):
 			if Globals.critrate >= randi_range(1,100):
 				$CPUParticles2D.emitting=true
 				Globals.playerdamage *= Globals.critmultiplier
+				print(Globals.playerdamage)	
 			set_collision_layer_value(2,true)
 			visible=true
 			if $AnimationPlayer.is_playing():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://1ixbruwkyhtk"]
+[gd_scene load_steps=7 format=3 uid="uid://1ixbruwkyhtk"]
 
 [ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_i4wd5"]
 [ext_resource type="Script" path="res://entrance.gd" id="1_in85v"]
@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c2y544p3i7s7p" path="res://room_expansion_left.tscn" id="3_b7xtm"]
 [ext_resource type="PackedScene" uid="uid://bd2sxgfl0s5ac" path="res://background.tscn" id="5_uixxy"]
 [ext_resource type="Script" path="res://instructions.gd" id="6_0f7sb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh0fc"]
-size = Vector2(236.064, 0.816447)
 
 [node name="entrance" type="Node2D"]
 script = ExtResource("1_in85v")
@@ -36,12 +33,6 @@ position = Vector2(379.596, 321.964)
 [node name="background" parent="." instance=ExtResource("5_uixxy")]
 position = Vector2(209.671, 266.402)
 scale = Vector2(1.64142, 531.756)
-
-[node name="Area2D" type="Area2D" parent="background"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Area2D"]
-position = Vector2(0.158218, 0.00343049)
-shape = SubResource("RectangleShape2D_lh0fc")
 
 [node name="instructions" type="Label" parent="."]
 offset_left = 56.0

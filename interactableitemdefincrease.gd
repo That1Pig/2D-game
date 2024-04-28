@@ -23,7 +23,7 @@ func _process(delta):
 		Globals.armour += defincrease
 		get_parent().queue_free()
 		print(Globals.armour)
-
+	print(Globals.gold)
 			
 
 func _on_body_entered(body):

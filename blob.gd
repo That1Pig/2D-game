@@ -54,12 +54,15 @@ func _on_damagearea_body_exited(body):
 func _on_damagearea_area_entered(area):
 	if immune == false:
 		if area.name == "weapon":
+			print("weapon collide")
 			immune = true
 			modulate.a = 0.5
 			speed = -20
 			enemyhealth -= Globals.playerdamage
+			print(enemyhealth)
 			if enemyhealth <= 0:
 				Globals.gold += round((randi_range(10,30) / 10) + Globals.goldextragain)
+				print(Globals.gold)
 				queue_free()
 			await get_tree().create_timer(0.2).timeout
 			speed = 50

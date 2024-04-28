@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://reaj561do6fe"]
+[gd_scene load_steps=6 format=3 uid="uid://reaj561do6fe"]
 
 [ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_7dci2"]
 [ext_resource type="PackedScene" uid="uid://b0gsa10hf0b43" path="res://room_expansion_right.tscn" id="2_0n6mr"]
 [ext_resource type="PackedScene" uid="uid://c2y544p3i7s7p" path="res://room_expansion_left.tscn" id="3_4m4g3"]
 [ext_resource type="PackedScene" uid="uid://x63rua7ul8jd" path="res://boostpad.tscn" id="4_qnvba"]
 [ext_resource type="PackedScene" uid="uid://bd2sxgfl0s5ac" path="res://background.tscn" id="5_f28as"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkmvl"]
-size = Vector2(236.462, 0.834613)
 
 [node name="room_2" type="Node2D"]
 
@@ -33,9 +30,3 @@ position = Vector2(335.784, 419.981)
 [node name="background" parent="." instance=ExtResource("5_f28as")]
 position = Vector2(237.746, 320.959)
 scale = Vector2(1.86076, 251.101)
-
-[node name="Area2D" type="Area2D" parent="background"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Area2D"]
-position = Vector2(0.136482, -0.00565267)
-shape = SubResource("RectangleShape2D_pkmvl")

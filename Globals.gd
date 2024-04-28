@@ -31,10 +31,10 @@ var armour_res = 1
 # ----- These represent rooms accessible by an exit -----
 #Example: A room with right and up entrance/exits are apart of right and up links
 
-var left_links = ["room_1","room_2","room_3","room_5","room_6","room_7","room_8","room_9","room_10","shop","room_14","room_4","room_21"]
-var right_links = ["room_1","room_2","room_4","room_5","room_6","room_8","room_9","shop","room_10","room_15","room_16","room_20"]
+var left_links = ["room_1","room_2","room_3","room_5","room_6","room_7","room_8","room_9","room_10","shop","room_14","room_4"]
+var right_links = ["room_1","room_2","room_4","room_5","room_6","room_8","room_9","shop","room_10","room_15","room_16"]
 var up_links = ["room_3","room_7","room_14","room_15","room_16"]
-var down_links = ["room_17","room_19","room_20","room_21"]
+var down_links = []
 
 #Positions for room linking to work
 var linkpos1

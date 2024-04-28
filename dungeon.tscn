@@ -35,6 +35,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="coin" type="Label" parent="CanvasLayer"]
-offset_left = 1067.0
-offset_right = 1107.0
+offset_left = 1087.0
+offset_right = 1127.0
 offset_bottom = 23.0
