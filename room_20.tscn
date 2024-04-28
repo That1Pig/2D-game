@@ -1,16 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dis4oxbphgu22"]
+[gd_scene load_steps=9 format=3 uid="uid://dis4oxbphgu22"]
 
 [ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_oc5fy"]
 [ext_resource type="PackedScene" uid="uid://x63rua7ul8jd" path="res://boostpad.tscn" id="2_f4anx"]
 [ext_resource type="PackedScene" uid="uid://bd2sxgfl0s5ac" path="res://background.tscn" id="2_we1b2"]
 [ext_resource type="PackedScene" uid="uid://cssnyq15h3c40" path="res://spring.tscn" id="4_2fop0"]
-[ext_resource type="PackedScene" uid="uid://dbmp8pue0rxhk" path="res://room_expansion_down.tscn" id="5_30ok4"]
 [ext_resource type="PackedScene" uid="uid://b0gsa10hf0b43" path="res://room_expansion_right.tscn" id="5_85cx7"]
 [ext_resource type="PackedScene" uid="uid://bh4j0mv718h8i" path="res://blob.tscn" id="6_0yebb"]
-[ext_resource type="PackedScene" uid="uid://cpuu4yujsyqm7" path="res://blobton.tscn" id="8_7kqag"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_38q6o"]
-size = Vector2(236.064, 0.895455)
+[ext_resource type="PackedScene" uid="uid://dbi6k0n62i4ih" path="res://blobton.tscn" id="8_7kqag"]
+[ext_resource type="PackedScene" uid="uid://c2y544p3i7s7p" path="res://room_expansion_left.tscn" id="8_13n1g"]
 
 [node name="room_18" type="Node2D"]
 
@@ -18,7 +15,7 @@ size = Vector2(236.064, 0.895455)
 position = Vector2(1343, 0)
 scale = Vector2(-2, 2)
 cell_quadrant_size = 14
-layer_0/tile_data = PackedInt32Array(1048605, 589824, 1, 851998, 589824, 1, 917534, 589824, 1, 983070, 589824, 1, 1048606, 589824, 1, 786462, 589824, 1, 1048590, 589824, 1, 1048589, 589824, 1, 1048599, 589824, 1, 1048598, 589824, 1, 1048597, 589824, 1, 1048588, 589824, 1, 1048587, 589824, 1, 1048586, 589824, 1, 1048585, 589824, 1, 1048584, 589824, 1, 1048583, 589824, 1, 983047, 589824, 1, 917511, 589824, 1, 851975, 589824, 1, 786439, 589824, 1, 786440, 1, 2, 851976, 1, 2, 917512, 1, 2, 983048, 1, 2, 983049, 1, 2, 917513, 1, 2, 786441, 1, 2, 851977, 1, 2, 786443, 1, 2, 851979, 1, 2, 917515, 1, 2, 983051, 1, 2, 786444, 589824, 1, 851980, 589824, 1, 917516, 589824, 1, 983052, 589824, 1, 786442, 1, 2, 851978, 1, 2, 917514, 1, 2, 983050, 1, 2, 720903, 589824, 1, 720904, 589824, 1, 720905, 589824, 1, 720906, 589824, 1, 720907, 589824, 1, 720908, 589824, 1, 327710, 589824, 1, 393246, 589824, 1, 458782, 589824, 1, 524318, 589824, 1, 589854, 589824, 1, 655390, 589824, 1, 720926, 589824, 1, 327687, 589824, 1, 327688, 589824, 1, 327689, 589824, 1, 327690, 589824, 1, 327691, 589824, 1, 327692, 589824, 1, 327693, 589824, 1, 327694, 589824, 1, 327695, 589824, 1, 327696, 589824, 1, 327697, 589824, 1, 327698, 589824, 1, 327699, 589824, 1, 327700, 589824, 1, 327701, 589824, 1, 327702, 589824, 1, 327703, 589824, 1, 327704, 589824, 1, 327705, 589824, 1, 327706, 589824, 1, 327707, 589824, 1, 327708, 589824, 1, 327709, 589824, 1, 1048596, 589824, 1, 1048595, 589824, 1, 1048594, 589824, 1, 1048593, 589824, 1, 1048592, 589824, 1, 1048591, 589824, 1)
+layer_0/tile_data = PackedInt32Array(1048590, 589824, 1, 1048589, 589824, 1, 1048599, 589824, 1, 1048598, 589824, 1, 1048597, 589824, 1, 1048588, 589824, 1, 1048587, 589824, 1, 1048586, 589824, 1, 1048585, 589824, 1, 1048584, 589824, 1, 1048583, 589824, 1, 983047, 589824, 1, 917511, 589824, 1, 851975, 589824, 1, 786439, 589824, 1, 786440, 1, 2, 851976, 1, 2, 917512, 1, 2, 983048, 1, 2, 983049, 1, 2, 917513, 1, 2, 786441, 1, 2, 851977, 1, 2, 786443, 1, 2, 851979, 1, 2, 917515, 1, 2, 983051, 1, 2, 786444, 589824, 1, 851980, 589824, 1, 917516, 589824, 1, 983052, 589824, 1, 786442, 1, 2, 851978, 1, 2, 917514, 1, 2, 983050, 1, 2, 720903, 589824, 1, 720904, 589824, 1, 720905, 589824, 1, 720906, 589824, 1, 720907, 589824, 1, 720908, 589824, 1, 327687, 589824, 1, 327688, 589824, 1, 327689, 589824, 1, 327690, 589824, 1, 327691, 589824, 1, 327692, 589824, 1, 327693, 589824, 1, 327694, 589824, 1, 327695, 589824, 1, 327696, 589824, 1, 327697, 589824, 1, 327698, 589824, 1, 327699, 589824, 1, 327700, 589824, 1, 327701, 589824, 1, 327702, 589824, 1, 327703, 589824, 1, 1048596, 589824, 1, 1048595, 589824, 1, 1048594, 589824, 1, 1048593, 589824, 1, 1048592, 589824, 1, 1048591, 589824, 1, 393239, 589824, 1, 458775, 589824, 1, 524311, 589824, 1, 589847, 589824, 1, 655383, 589824, 1)
 
 [node name="boostpad" parent="grid" instance=ExtResource("2_f4anx")]
 position = Vector2(280, 238)
@@ -29,17 +26,8 @@ position = Vector2(238, 238)
 scale = Vector2(1, 1)
 
 [node name="background" parent="." instance=ExtResource("2_we1b2")]
-position = Vector2(811.5, 309.555)
-scale = Vector2(2.61328, 333.111)
-
-[node name="Area2D" type="Area2D" parent="background"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Area2D"]
-position = Vector2(0.158203, 0.0429347)
-shape = SubResource("RectangleShape2D_38q6o")
-
-[node name="room_expansion_down" parent="." instance=ExtResource("5_30ok4")]
-position = Vector2(600, 443)
+position = Vector2(908, 309.555)
+scale = Vector2(1.85937, 333.111)
 
 [node name="room_expansion_right" parent="." instance=ExtResource("5_85cx7")]
 position = Vector2(1111, 238)
@@ -52,3 +40,6 @@ position = Vector2(945, 442)
 
 [node name="blobton" parent="." instance=ExtResource("8_7kqag")]
 position = Vector2(892, 444)
+
+[node name="room_expansion_left" parent="." instance=ExtResource("8_13n1g")]
+position = Vector2(693, 378)

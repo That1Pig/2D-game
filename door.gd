@@ -42,7 +42,7 @@ func _on_body_entered(body):
 			Globals.right_links.erase("room_1")
 			
 			Globals.down_links.erase("room_4")
-			Globals.right_links.erase			("room_4")
+			Globals.right_links.erase("room_4")
 			
 			Globals.left_links.append("room_11")
 			Globals.right_links.append("room_11")
@@ -50,7 +50,7 @@ func _on_body_entered(body):
 			Globals.left_links.append("room_12")
 			Globals.right_links.append("room_12")
 			
-			Globals.down_links.append("room_13")
+			Globals.left_links.append("room_13")
 			Globals.right_links.append("room_13")
 			
 			

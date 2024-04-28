@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpuu4yujsyqm7"]
+[gd_scene load_steps=6 format=3 uid="uid://dbi6k0n62i4ih"]
 
 [ext_resource type="Script" path="res://blobton.gd" id="1_s5w61"]
 [ext_resource type="Texture2D" uid="uid://biu8tc75hfidh" path="res://tilemap-characters.png" id="2_nxb1t"]

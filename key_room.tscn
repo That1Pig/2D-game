@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://61ysgwf4h4"]
+[gd_scene load_steps=8 format=3 uid="uid://61ysgwf4h4"]
 
 [ext_resource type="PackedScene" uid="uid://b1d1royapmy6v" path="res://tilemap.tscn" id="1_kp8nm"]
 [ext_resource type="PackedScene" uid="uid://b0gsa10hf0b43" path="res://room_expansion_right.tscn" id="2_rsuyy"]
@@ -9,9 +9,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00kq1"]
 size = Vector2(420.729, 279.307)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i25yr"]
-size = Vector2(220.495, 0.816447)
 
 [node name="key_room" type="Node2D"]
 
@@ -38,11 +35,5 @@ shape = SubResource("RectangleShape2D_00kq1")
 [node name="background" parent="." instance=ExtResource("6_03duv")]
 position = Vector2(209.715, 307.277)
 scale = Vector2(1.64176, 278.465)
-
-[node name="Area2D" type="Area2D" parent="background"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Area2D"]
-position = Vector2(0.7827, 0.00343049)
-shape = SubResource("RectangleShape2D_i25yr")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
