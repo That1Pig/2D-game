@@ -94,8 +94,8 @@ position = Vector2(706, 243)
 [node name="swingingsawright2" parent="." instance=ExtResource("6_grxt8")]
 position = Vector2(706, -61)
 
+[node name="room_expansion_left" parent="." instance=ExtResource("6_7ufhn")]
+position = Vector2(499, 378)
+
 [node name="room_expansion_right" parent="." instance=ExtResource("5_seqoi")]
 position = Vector2(703, -153)
-
-[node name="room_expansion_left" parent="room_expansion_right" instance=ExtResource("6_7ufhn")]
-position = Vector2(-204, 531)
